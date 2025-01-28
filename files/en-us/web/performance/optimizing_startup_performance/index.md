@@ -62,11 +62,11 @@ In terms of responsiveness, users won't notice a delay of 50ms or less. Any dela
 There are other things beyond going asynchronous, which can help you improve your app's startup time. Here are a few of them:
 
 - Download time
-  - : Keep in mind how long it will take the user to download your application's data. If your application is very popular, or has to re-download content frequently, you should try to have as fast a hosting server as possible. Always [compress](/en-US/docs/Glossary/GZip_compression) your data to make it as small as you can.
+  - : Keep in mind how long it will take the user to download your application's data. If your application is very popular, or has to re-download content frequently, you should try to have as fast a hosting server as possible. Always [compress](/en-US/docs/Glossary/gzip_compression) your data to make it as small as you can.
 - Data size
   - : Do your best to optimize the size of your data; smaller level files will download and be processed faster than larger ones.
 - Subjective factors
-  - : Anything you can do to help keep the user engaged during the startup process will help make the time seem to go by faster. Displaying a mock splash screen can improve [perceived performance](/en-US/docs/Learn/Performance/Perceived_performance). For heavy sites, anything you can do to help the user feel like your app is doing something instead of sitting there quietly helps.
+  - : Anything you can do to help keep the user engaged during the startup process will help make the time seem to go by faster. Displaying a mock splash screen can improve [perceived performance](/en-US/docs/Learn_web_development/Extensions/Performance/Perceived_performance). For heavy sites, anything you can do to help the user feel like your app is doing something instead of sitting there quietly helps.
 
 ## See also
 

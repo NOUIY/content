@@ -21,7 +21,7 @@ This element only includes the [global attributes](/en-US/docs/Web/HTML/Global_a
 
   - Alternative voice or mood
   - Taxonomic designations (such as the genus and species "_Homo sapiens_")
-  - Idiomatic terms from another language (such as "_et cetera_"); these should include the [`lang`](/en-US/docs/Web/HTML/Global_attributes#lang) attribute to identify the language
+  - Idiomatic terms from another language (such as "_et cetera_"); these should include the [`lang`](/en-US/docs/Web/HTML/Global_attributes/lang) attribute to identify the language
   - Technical terms
   - Transliterations
   - Thoughts (such as "She wondered, _What is this writer talking about, anyway?_")
@@ -80,7 +80,7 @@ This example demonstrates using the `<i>` element to mark text that is in anothe
     </tr>
     <tr>
       <th scope="row">Tag omission</th>
-      <td>{{no_tag_omission}}</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
     </tr>
     <tr>
       <th scope="row">Permitted parents</th>

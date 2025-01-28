@@ -57,8 +57,6 @@ The CSS fonts module also supports variable fonts. Unlike regular fonts, where e
     - {{cssxref("@font-face/font-display", "font-display")}}
     - {{cssxref("@font-face/font-family", "font-family")}}
     - {{cssxref("@font-face/font-feature-settings", "font-feature-settings")}}
-    - {{cssxref("@font-face/font-language-override", "font-language-override")}}
-    - {{cssxref("@font-face/font-named-instance", "font-named-instance")}}
     - {{cssxref("@font-face/font-stretch", "font-stretch")}}
     - {{cssxref("@font-face/font-style", "font-style")}}
     - {{cssxref("@font-face/font-variation-settings", "font-variation-settings")}}
@@ -139,11 +137,11 @@ The CSS fonts module also supports variable fonts. Unlike regular fonts, where e
 
 ## Guides
 
-- [Learn: Fundamental text and font styling](/en-US/docs/Learn/CSS/Styling_text/Fundamentals)
+- [Learn: Fundamental text and font styling](/en-US/docs/Learn_web_development/Core/Text_styling/Fundamentals)
 
   - : This beginner's learning article covers the basic fundamentals of text and font styling. It covers how to set the font weight, family, and style by using the {{cssxref("font")}} shorthand and how to align text and manage line and letter spacing.
 
-- [Learn: Web fonts](/en-US/docs/Learn/CSS/Styling_text/Web_fonts)
+- [Learn: Web fonts](/en-US/docs/Learn_web_development/Core/Text_styling/Web_fonts)
 
   - : This beginner's learning article explains how to use custom fonts on your web page to allow for more varied and custom text styling.
 
@@ -155,7 +153,7 @@ The CSS fonts module also supports variable fonts. Unlike regular fonts, where e
 
   - : This article will help you get started with using variable fonts.
 
-- [Improving font perfomance](/en-US/docs/Learn/Performance/CSS#improving_font_performance)
+- [Improving font performance](/en-US/docs/Learn_web_development/Extensions/Performance/CSS#improving_font_performance)
 
   - : This article, part of the CSS performance guide, discusses font loading, loading only the required glyphs, and defining font display behavior with the `font-display` descriptor.
 

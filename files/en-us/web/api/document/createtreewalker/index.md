@@ -44,7 +44,8 @@ createTreeWalker(root, whatToShow, filter)
     | `NodeFilter.SHOW_PROCESSING_INSTRUCTION`                 | `0x40`          | Shows {{domxref("ProcessingInstruction")}} nodes. |
     | `NodeFilter.SHOW_TEXT`                                   | `0x4`           | Shows {{domxref("Text")}} nodes.                  |
 
-    > **Note:** Since the parent of any `Attr` node is always `null`, {{DOMXref("TreeWalker.nextNode()")}} and {{DOMXref("TreeWalker.previousNode()")}} will never return an `Attr` node. To traverse `Attr` nodes, use {{DOMXref("Element.attributes")}} instead.
+    > [!NOTE]
+    > Since the parent of any `Attr` node is always `null`, {{DOMXref("TreeWalker.nextNode()")}} and {{DOMXref("TreeWalker.previousNode()")}} will never return an `Attr` node. To traverse `Attr` nodes, use {{DOMXref("Element.attributes")}} instead.
 
 - `filter` {{optional_inline}}
 
@@ -158,8 +159,8 @@ const treeWalker = document.createTreeWalker(
     node.classList.contains("no-escape")
       ? NodeFilter.FILTER_REJECT
       : node.closest(".escape")
-      ? NodeFilter.FILTER_ACCEPT
-      : NodeFilter.FILTER_SKIP,
+        ? NodeFilter.FILTER_ACCEPT
+        : NodeFilter.FILTER_SKIP,
 );
 
 while (treeWalker.nextNode()) {

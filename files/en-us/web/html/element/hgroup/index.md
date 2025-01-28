@@ -1,5 +1,5 @@
 ---
-title: <hgroup>
+title: "<hgroup>: The Heading Group element"
 slug: Web/HTML/Element/hgroup
 page-type: html-element
 browser-compat: html.elements.hgroup
@@ -45,10 +45,6 @@ The `<hgroup>` itself has no impact on the document outline of a web page. Rathe
 
 {{EmbedLiveSample('Examples')}}
 
-## Accessibility concerns
-
-The `<hgroup>` presently has no strong accessibility semantics. The content of the element (a heading and optional paragraphs) is what is exposed by browser accessibility APIs.
-
 ## Technical summary
 
 <table class="properties">
@@ -77,7 +73,7 @@ The `<hgroup>` presently has no strong accessibility semantics. The content of t
     </tr>
     <tr>
       <th scope="row">Tag omission</th>
-      <td>{{no_tag_omission}}</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
     </tr>
     <tr>
       <th scope="row">Permitted parents</th>
@@ -92,8 +88,8 @@ The `<hgroup>` presently has no strong accessibility semantics. The content of t
       <th scope="row">Implicit ARIA role</th>
       <td>
         <code
-          ><a href="/en-US/docs/Web/Accessibility/ARIA/Roles/generic_role"
-            >generic</a
+          ><a href="/en-US/docs/Web/Accessibility/ARIA/Roles/group_role"
+            >group</a
           ></code
         >
       </td>

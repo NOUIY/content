@@ -20,11 +20,20 @@ format(date)
 ### Parameters
 
 - `date`
-  - : The date to format.
+
+  - : The date to format. Can be a {{jsxref("Date")}} or {{jsxref("Temporal.PlainDateTime")}} object. Additionally can be a {{jsxref("Temporal.PlainTime")}}, {{jsxref("Temporal.PlainDate")}}, {{jsxref("Temporal.PlainYearMonth")}}, or {{jsxref("Temporal.PlainMonthDay")}} object if the `DateTimeFormat` object was configured to print at least one relevant part of the date.
+
+    > [!NOTE]
+    > A {{jsxref("Temporal.ZonedDateTime")}} object will always throw a `TypeError`; use {{jsxref("Temporal/ZonedDateTime/toLocaleString", "Temporal.ZonedDateTime.prototype.toLocaleString()")}} or convert it to a {{jsxref("Temporal.PlainDateTime")}} object instead.
+
+    Omitting it results in formatting the current date (as returned by {{jsxref("Date.now()")}}), which could be slightly confusing, so it is advisable to always explicitly pass a date.
 
 ### Return value
 
 A string representing the given `date` formatted according to the locale and formatting options of this {{jsxref("Intl.DateTimeFormat")}} object.
+
+> [!NOTE]
+> Most of the time, the formatting returned by `format()` is consistent. However, the output may vary between implementations, even within the same locale — output variations are by design and allowed by the specification. It may also not be what you expect. For example, the string may use non-breaking spaces or be surrounded by bidirectional control characters. You should not compare the results of `format()` to hardcoded constants.
 
 ## Examples
 
@@ -61,36 +70,6 @@ console.log(formatted.join("; "));
 // "setembro de 2012; dezembro de 2012; abril de 2012"
 ```
 
-### Avoid comparing formatted date values to static values
-
-Most of the time, the formatting returned by `format()` is consistent.
-However, this might change in the future and isn't guaranteed for all the languages —
-output variations are by design and allowed by the specification. Most notably, the IE
-and Edge browsers insert bidirectional control characters around dates, so the output
-text will flow properly when concatenated with other text.
-
-For this reason you cannot expect to be able to compare the results of
-`format()` to a static value:
-
-```js example-bad
-let d = new Date("2019-01-01T00:00:00.000000Z");
-let formattedDate = Intl.DateTimeFormat(undefined, {
-  year: "numeric",
-  month: "numeric",
-  day: "numeric",
-  hour: "numeric",
-  minute: "numeric",
-  second: "numeric",
-}).format(d);
-
-"1.1.2019, 01:00:00" === formattedDate;
-// true in Firefox and others
-// false in IE and Edge
-```
-
-> **Note:** See also this [StackOverflow thread](https://stackoverflow.com/questions/25574963/ies-tolocalestring-has-strange-characters-in-results)
-> for more details and examples.
-
 ## Specifications
 
 {{Specifications}}
@@ -102,6 +81,3 @@ let formattedDate = Intl.DateTimeFormat(undefined, {
 ## See also
 
 - {{jsxref("Intl.DateTimeFormat")}}
-- {{jsxref("Date.prototype.toLocaleString()")}}
-- {{jsxref("Date.prototype.toLocaleDateString()")}}
-- {{jsxref("Date.prototype.toLocaleTimeString()")}}

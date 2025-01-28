@@ -37,7 +37,7 @@ WebAssembly.instantiateStreaming(fetch("table.wasm")).then((obj) => {
 });
 ```
 
-Here we create a table (`otherTable`) from JavaScript using the [`WebAssembly.Table`](/en-US/docs/WebAssembly/JavaScript_interface/Table) constructor, then we load `table.wasm` into our page using the [`WebAssembly.instantiateStreaming()`](/en-US/docs/WebAssembly/JavaScript_interface/instantiateStreaming) method.
+Here we create a table (`otherTable`) from JavaScript using the [`WebAssembly.Table`](/en-US/docs/WebAssembly/JavaScript_interface/Table) constructor, then we load `table.wasm` into our page using the [`WebAssembly.instantiateStreaming()`](/en-US/docs/WebAssembly/JavaScript_interface/instantiateStreaming_static) method.
 
 We then get the function exported from the module, retrieve the functions it references via [`tbl.get()`](/en-US/docs/WebAssembly/JavaScript_interface/Table/get) and log the result of invoking each one to the console. Next, we use `set()` to make the `otherTable` table contain references to the same functions as the `tbl` table.
 
@@ -68,4 +68,4 @@ Some other particulars to be aware of with exported WebAssembly functions:
 
 - Their [length](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/length) property is the number of declared arguments in the Wasm function signature.
 - Their [name](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name) property is the `toString()` result of the function's index in the Wasm module.
-- If you try to call an exported Wasm function that takes or returns an i64 type value, it currently throws an error because JavaScript currently has no precise way to represent an i64. This may well change in the future though — a new int64 type is being considered for future standards, which could then be used by Wasm.
+- If you try to call an exported Wasm function that takes or returns an i64 type value, it currently throws an error because JavaScript currently has no precise way to represent an i64. The solution is to use BigInt values, which represent integers of arbitrary size, so they can represent 64-bit integers properly.

@@ -21,7 +21,7 @@ selector {
 }
 ```
 
-In formal CSS syntax, data types are denoted by a keyword placed between the inequality signs "`<`" and "`>`".
+In formal CSS syntax, data types are denoted by a keyword placed between the angle brackets `<` and `>`.
 
 ## Textual data types
 
@@ -37,6 +37,8 @@ These types include keywords and identifiers as well as strings, and URLs.
       - : The computed value of the property on the element's parent.
     - {{CSSXref("revert")}}
       - : Rolls back the cascade to the value of the earlier origin.
+    - {{CSSXref("revert-layer")}}
+      - : Rolls back the cascade to the value of the earlier [cascade layer](/en-US/docs/Web/CSS/@layer).
     - {{CSSXref("unset")}}
       - : Acts as `inherit` or `initial` depending on whether the property is inherited or not.
 - {{cssxref("&lt;custom-ident&gt;")}}
@@ -45,12 +47,12 @@ These types include keywords and identifiers as well as strings, and URLs.
   - : A `<custom-ident>` with the additional restriction that it must start with two dashes, for example, with [CSS Custom Properties](/en-US/docs/Web/CSS/Using_CSS_custom_properties).
 - {{cssxref("&lt;string&gt;")}}
   - : A quoted string, such as used for a value of the {{cssxref("content")}} property.
-- {{cssxref("&lt;url&gt;", "url()")}}
+- {{cssxref("url_value", "&lt;url&gt;")}}
   - : A pointer to a resource, for example as the value of {{cssxref("background-image")}}.
 
 ## Numeric data types
 
-These data types are used to indicate quantities, indexes, and positions. The majority of these are defined in the Values and Units specification, however additional types are described in other specifications where they are specific to that specification alone — for example the `fr` unit in [CSS Grid Layout](https://www.w3.org/TR/css-grid-1/#fr-unit).
+These data types are used to indicate quantities, indexes, and positions. The majority of these are defined in the Values and Units specification, however additional types are described in other specifications where they are specific to that specification alone — for example the `fr` unit in [CSS grid layout](https://www.w3.org/TR/css-grid-1/#fr-unit).
 
 - {{cssxref("&lt;integer&gt;")}}
   - : One or more decimal units 0 through 9.
@@ -63,7 +65,7 @@ These data types are used to indicate quantities, indexes, and positions. The ma
 - {{cssxref("&lt;ratio&gt;")}}
   - : A ratio, written with the syntax `<number> / <number>`.
 - {{cssxref("&lt;flex&gt;")}}
-  - : A flexible length introduced for [CSS Grid Layout](/en-US/docs/Web/CSS/CSS_grid_layout), written as a `<number>` with the `fr` unit attached and used for grid track sizing.
+  - : A flexible length introduced for [CSS grid layout](/en-US/docs/Web/CSS/CSS_grid_layout), written as a `<number>` with the `fr` unit attached and used for grid track sizing.
 
 ## Quantities
 
@@ -137,8 +139,8 @@ These data types are used in [CSS math function](/en-US/docs/Web/CSS/CSS_Functio
 - {{cssxref("&lt;calc-product&gt;")}}
   - : A calculation which is a sequence of calculation values interspersed with multiplication (`*`) and division (`/`) operators. When multiplying, one value must be unitless. When dividing, the second value must be unitless.
 - {{cssxref("&lt;calc-value&gt;")}}
-  - : Defines accepted values for calculations, values such as {{cssxref("&lt;number&gt;")}}, {{cssxref("&lt;dimension&gt;")}}, {{cssxref("&lt;percentage&gt;")}}, {{cssxref("&lt;calc-constant&gt;")}} or nested {{cssxref("&lt;calc-sum&gt;")}} calculations.
-- {{cssxref("&lt;calc-constant&gt;")}}
+  - : Defines accepted values for calculations, values such as {{cssxref("&lt;number&gt;")}}, {{cssxref("&lt;dimension&gt;")}}, {{cssxref("&lt;percentage&gt;")}}, {{cssxref("&lt;calc-keyword&gt;")}} or nested {{cssxref("&lt;calc-sum&gt;")}} calculations.
+- {{cssxref("&lt;calc-keyword&gt;")}}
   - : Defines a number of CSS keywords representing numeric constants such as `e` and `π`, that can be used in CSS math functions.
 
 ## Specifications
@@ -148,5 +150,5 @@ These data types are used in [CSS math function](/en-US/docs/Web/CSS/CSS_Functio
 ## See also
 
 - [CSS Units and Values](/en-US/docs/Web/CSS/CSS_Values_and_Units)
-- [Introduction to CSS: Values and Units](/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
+- [Learn: Values and units](/en-US/docs/Learn_web_development/Core/Styling_basics/Values_and_units)
 - [CSS Functional Notation](/en-US/docs/Web/CSS/CSS_Functions)

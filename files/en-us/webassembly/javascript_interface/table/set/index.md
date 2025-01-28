@@ -2,7 +2,7 @@
 title: WebAssembly.Table.prototype.set()
 slug: WebAssembly/JavaScript_interface/Table/set
 page-type: webassembly-instance-method
-browser-compat: javascript.builtins.WebAssembly.Table.set
+browser-compat: webassembly.api.Table.set
 ---
 
 {{WebAssemblySidebar}}
@@ -52,7 +52,7 @@ const importObj = {
 };
 ```
 
-Finally, we load and instantiate a Wasm module (table2.wasm) using [`WebAssembly.instantiateStreaming()`](/en-US/docs/WebAssembly/JavaScript_interface/instantiateStreaming), print the table length, and invoke the two referenced functions that are now stored in the table. The `table2.wasm` module adds two function references to the table, both of which print out a simple value (see [text representation](https://github.com/mdn/webassembly-examples/blob/main/js-api-examples/table2.wat):
+Finally, we load and instantiate a Wasm module (table2.wasm) using [`WebAssembly.instantiateStreaming()`](/en-US/docs/WebAssembly/JavaScript_interface/instantiateStreaming_static), print the table length, and invoke the two referenced functions that are now stored in the table. The `table2.wasm` module adds two function references to the table, both of which print out a simple value (see [text representation](https://github.com/mdn/webassembly-examples/blob/main/js-api-examples/table2.wat):
 
 ```js
 WebAssembly.instantiateStreaming(fetch("table2.wasm"), importObject).then(
@@ -64,7 +64,7 @@ WebAssembly.instantiateStreaming(fetch("table2.wasm"), importObject).then(
 );
 ```
 
-Note how you've got to include a second function invocation operator at the end of the accessor to actually invoke the referenced function and log the value stored inside it (e.g. `get(0)()` rather than `get(0)`) .
+Note how you've got to include a second function invocation operator at the end of the accessor to actually invoke the referenced function and log the value stored inside it (e.g. `get(0)()` rather than `get(0)`).
 
 This example shows that we're creating and accessing the table from JavaScript, but the same table is visible and callable inside the Wasm instance, too.
 

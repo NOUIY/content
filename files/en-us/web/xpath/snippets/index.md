@@ -21,11 +21,10 @@ The following custom utility function can be used to evaluate XPath expressions 
 // initial work.
 function evaluateXPath(aNode, aExpr) {
   const xpe = new XPathEvaluator();
-  const nsResolver = xpe.createNSResolver(
+  const nsResolver =
     aNode.ownerDocument === null
       ? aNode.documentElement
-      : aNode.ownerDocument.documentElement,
-  );
+      : aNode.ownerDocument.documentElement;
   const result = xpe.evaluate(aExpr, aNode, nsResolver, 0, null);
   const found = [];
   let res;
@@ -34,13 +33,11 @@ function evaluateXPath(aNode, aExpr) {
 }
 ```
 
-Note that `createNSResolver` should only be used if you are sure the namespace prefixes in the XPath expression match those in the document you want to query (and that no default namespace is being used (though see [document.createNSResolver](/en-US/docs/Web/API/Document/createNSResolver) for a workaround)). Otherwise, you have to provide your own implementation of XPathNSResolver.
-
-If you are using [XMLHttpRequest](/en-US/docs/Web/API/XMLHttpRequest) to read a local or remote XML file into a DOM tree (as described in [Parsing and serializing XML](/en-US/docs/Web/Guide/Parsing_and_serializing_XML)), the first argument to `evaluateXPath()` should be `req.responseXML`.
+Note that the `documentElement` should only be used if you are sure the namespace prefixes in the XPath expression match those in the document you want to query (and that no default namespace is being used). Otherwise, you have to provide your own implementation of XPathNSResolver.
 
 #### Sample usage
 
-Assume we have the following XML document (see also [How to Create a DOM tree](/en-US/docs/Web/API/Document_object_model/How_to_create_a_DOM_tree) and [Parsing and serializing XML](/en-US/docs/Web/Guide/Parsing_and_serializing_XML)):
+Assume we have the following XML document (see also [Parsing and serializing XML](/en-US/docs/Web/XML/Parsing_and_serializing_XML)):
 
 ##### Example: An XML document to use with the custom `evaluateXPath()` utility function
 
@@ -83,7 +80,7 @@ console.log(results.length);
 
 ### docEvaluateArray
 
-The following is a simple utility function to get (ordered) XPath results into an array, regardless of whether there is a special need for namespace resolvers, etc. It avoids the more complex syntax of [`document.evaluate()`](/en-US/docs/Web/API/Document/evaluate) for cases when it is not required as well as the need to use the special iterators on [`XPathResult`](/en-US/docs/Web/API/XPathResult) (by returning an array instead).
+The following is a utility function to get (ordered) XPath results into an array, regardless of whether there is a special need for namespace resolvers, etc. It avoids the more complex syntax of [`document.evaluate()`](/en-US/docs/Web/API/Document/evaluate) for cases when it is not required as well as the need to use the special iterators on [`XPathResult`](/en-US/docs/Web/API/XPathResult) (by returning an array instead).
 
 #### Example: Defining a simple `docEvaluateArray()` utility function
 
@@ -122,17 +119,17 @@ The following function allows one to pass an element and an XML document to find
 ```js
 function getXPathForElement(el, xml) {
   let xpath = "";
-  let pos, tempitem2;
+  let pos, tempItem2;
 
   while (el !== xml.documentElement) {
     pos = 0;
-    tempitem2 = el;
-    while (tempitem2) {
-      if (tempitem2.nodeType === 1 && tempitem2.nodeName === el.nodeName) {
+    tempItem2 = el;
+    while (tempItem2) {
+      if (tempItem2.nodeType === 1 && tempItem2.nodeName === el.nodeName) {
         // If it is ELEMENT_NODE of the same name
         pos += 1;
       }
-      tempitem2 = tempitem2.previousSibling;
+      tempItem2 = tempItem2.previousSibling;
     }
 
     xpath = `*[name()='${el.nodeName}' and namespace-uri()='${

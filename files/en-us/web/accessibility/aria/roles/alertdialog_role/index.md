@@ -4,8 +4,10 @@ slug: Web/Accessibility/ARIA/Roles/alertdialog_role
 page-type: aria-role
 spec-urls:
   - https://w3c.github.io/aria/#alertdialog
-  - https://w3c.github.io/aria-practices/#alertdialog
+  - https://www.w3.org/TR/wai-aria-1.2/#alertdialog
 ---
+
+{{AccessibilitySidebar}}
 
 The **alertdialog** role is to be used on modal alert dialogs that interrupt a user's workflow to communicate an important message and require a response.
 
@@ -15,13 +17,14 @@ The `alertdialog` role is used to notify users of urgent information that demand
 
 As the name implies, `alertdialog` is a mashup of the [`dialog`](/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role) and [`alert`](/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) roles. `alertdialog` is a type of `dialog` with similar use cases as `alert`, but for when a user response is required.
 
-> **Note:** The `alertdialog` role should only be used for alert messages that have associated interactive controls. If an alert dialog only contains static content and has no interactive controls at all, use [`alert`](/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) instead.
+> [!NOTE]
+> The `alertdialog` role should only be used for alert messages that have associated interactive controls. If an alert dialog only contains static content and has no interactive controls at all, use [`alert`](/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) instead.
 
 Being a type of dialog, the [`dialog`](/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role) role's states, properties, and keyboard focus requirements are applicable to the `alertdialog` role as well.
 
-Because of its urgent nature, interrupting the user's workflow, alert dialogs must always be [modal](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-modal).
+Because of its urgent nature, interrupting the user's workflow, alert dialogs should be [modal](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-modal).
 
-The alert dialog must have at least one focusable control — such as Confirm, Close, and Cancel — and focus must be moved to that control when the alert dialog appears. Alertdialogs can have additional interactive controls such as text fields and checkboxes.
+The alert dialog must have at least one focusable control — such as Confirm, Close, and Cancel — and focus must be moved to that control when the alert dialog appears. Alert dialogs can have additional interactive controls such as text fields and checkboxes.
 
 The `alertdialog` role is not to be used as a replacement for other dialogs, including no-confirmation-required `alert` dialogs ([`Window.alert()`](/en-US/docs/Web/API/Window/alert)) and prompts ([`Window.prompt()`](/en-US/docs/Web/API/Window/prompt)).
 
@@ -30,7 +33,7 @@ Adding `role="alertdialog"` alone is not sufficient to make an alert dialog acce
 - The alert dialog must be properly labeled
 - Keyboard focus must be managed correctly
 
-The `alertdialog` must have an accessible name, defined with [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) or [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label). The alert dialog text must have an accessible description using [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby).
+The `alertdialog` must have an accessible name, defined with [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) or [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label). The alert dialog text must have an {{glossary("accessible description")}} using [`aria-describedby`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby).
 
 ## Examples
 
@@ -95,7 +98,7 @@ The code snippet above shows how to mark up an alert dialog that only provides a
 
 {{Specifications}}
 
-## See Also
+## See also
 
 - HTML {{HTMLElement("dialog")}} element
 - [The `dialog` role](/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role)
@@ -103,11 +106,3 @@ The code snippet above shows how to mark up an alert dialog that only provides a
 - [`aria-modal` attribute](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-modal)
 - [`Window.alert()`](/en-US/docs/Web/API/Window/alert)
 - [`Window.prompt()`](/en-US/docs/Web/API/Window/prompt)
-
-<section id="Quick_links">
-
-1. [**WAI-ARIA roles**](/en-US/docs/Web/Accessibility/ARIA/Roles)
-
-   {{ListSubpagesForSidebar("/en-US/docs/Web/Accessibility/ARIA/Roles")}}
-
-</section>

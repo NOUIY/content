@@ -35,7 +35,8 @@ async function name(param0, param1, /* …, */ paramN) {
 }
 ```
 
-> **Note:** An [expression statement](/en-US/docs/Web/JavaScript/Reference/Statements/Expression_statement) cannot begin with the keywords `async function` to avoid ambiguity with an [`async function` declaration](/en-US/docs/Web/JavaScript/Reference/Statements/async_function). The `async function` keywords only begin an expression when they appear in a context that cannot accept statements.
+> [!NOTE]
+> An [expression statement](/en-US/docs/Web/JavaScript/Reference/Statements/Expression_statement) cannot begin with the keywords `async function` to avoid ambiguity with an [`async function` declaration](/en-US/docs/Web/JavaScript/Reference/Statements/async_function). The `async function` keywords only begin an expression when they appear in a context that cannot accept statements.
 
 ### Parameters
 
@@ -52,7 +53,7 @@ An `async function` expression is very similar to, and has almost the same synta
 
 ## Examples
 
-### Simple example
+### Using async function expression
 
 ```js
 function resolveAfter2Seconds(x) {
@@ -84,6 +85,23 @@ add(10).then((v) => {
 });
 ```
 
+### Async IIFE
+
+An `async` [IIFE](/en-US/docs/Glossary/IIFE) allows you to use [`await`](/en-US/docs/Web/JavaScript/Reference/Operators/await) and [`for...await`](/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of) in contexts where [top-level await](/en-US/docs/Web/JavaScript/Reference/Operators/await#top_level_await) is not available. Here we use an [arrow function](/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) to define the IIFE, but `async function` expressions can also be used.
+
+```js
+const getFileStream = async (url) => {
+  // implementation
+};
+
+(async () => {
+  const stream = await getFileStream("https://domain.name/path/file.ext");
+  for await (const chunk of stream) {
+    console.log({ chunk });
+  }
+})();
+```
+
 ## Specifications
 
 {{Specifications}}
@@ -94,6 +112,8 @@ add(10).then((v) => {
 
 ## See also
 
+- [Functions](/en-US/docs/Web/JavaScript/Guide/Functions) guide
+- [Functions](/en-US/docs/Web/JavaScript/Reference/Functions)
 - {{jsxref("Statements/async_function", "async function")}}
 - {{jsxref("AsyncFunction")}}
 - {{jsxref("Operators/await", "await")}}

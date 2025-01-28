@@ -15,7 +15,7 @@ The **`<option>`** [HTML](/en-US/docs/Web/HTML) element is used to define an ite
 
 This element includes the [global attributes](/en-US/docs/Web/HTML/Global_attributes).
 
-- `disabled`
+- [`disabled`](/en-US/docs/Web/HTML/Attributes/disabled)
   - : If this Boolean attribute is set, this option is not checkable. Often browsers grey out such control and it won't receive any browsing event, like mouse clicks or focus-related ones. If this attribute is not set, the element can still be disabled if one of its ancestors is a disabled {{HTMLElement("optgroup")}} element.
 - `label`
   - : This attribute is text for the label indicating the meaning of the option. If the `label` attribute isn't defined, its value is that of the element text content.
@@ -26,7 +26,7 @@ This element includes the [global attributes](/en-US/docs/Web/HTML/Global_attrib
 
 ## Styling with CSS
 
-Styling the **`<option>`** element is highly limited. Options don't inherit the font set on the parent. In Firefox, only [`color`](/en-US/docs/Web/CSS/color) and [`background-color`](/en-US/docs/Web/CSS/background-color) can be set, however in Chrome and Safari it's not possible to set any properties. You can find more details about styling in [our guide to advanced form styling](/en-US/docs/Learn/Forms/Advanced_form_styling).
+Styling the **`<option>`** element is highly limited. Options don't inherit the font set on the parent. In Firefox, only [`color`](/en-US/docs/Web/CSS/color) and [`background-color`](/en-US/docs/Web/CSS/background-color) can be set, however in Chrome and Safari it's not possible to set any properties. You can find more details about styling in [our guide to advanced form styling](/en-US/docs/Learn_web_development/Extensions/Forms/Advanced_form_styling).
 
 ## Examples
 

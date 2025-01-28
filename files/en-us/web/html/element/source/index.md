@@ -11,60 +11,6 @@ The **`<source>`** [HTML](/en-US/docs/Web/HTML) element specifies one or more me
 
 {{EmbedInteractiveExample("pages/tabbed/source.html", "tabbed-standard")}}
 
-<table class="properties">
-  <tbody>
-    <tr>
-      <th scope="row">
-        <a href="/en-US/docs/Web/HTML/Content_categories"
-          >Content categories</a
-        >
-      </th>
-      <td>None.</td>
-    </tr>
-    <tr>
-      <th scope="row">Permitted content</th>
-      <td>None; it is a {{Glossary("void element")}}.</td>
-    </tr>
-    <tr>
-      <th scope="row">Tag omission</th>
-      <td>It must have a start tag, but must not have an end tag.</td>
-    </tr>
-    <tr>
-      <th scope="row">Permitted parents</th>
-      <td>
-        <div>
-          A media element—{{HTMLElement("audio")}} or
-          {{HTMLElement("video")}}—and it must be placed before any
-          <a href="/en-US/docs/Web/HTML/Content_categories#flow_content"
-            >flow content</a
-          >
-          or {{HTMLElement("track")}} element.
-        </div>
-        <div>
-          A {{HTMLElement("picture")}} element, and it must be placed
-          before the {{HTMLElement("img")}} element.
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Implicit ARIA role</th>
-      <td>
-        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
-          >No corresponding role</a
-        >
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Permitted ARIA roles</th>
-      <td>No <code>role</code> permitted</td>
-    </tr>
-    <tr>
-      <th scope="row">DOM interface</th>
-      <td>{{domxref("HTMLSourceElement")}}</td>
-    </tr>
-  </tbody>
-</table>
-
 ## Attributes
 
 This element supports all [global attributes](/en-US/docs/Web/HTML/Global_attributes). In addition, the following attributes can be used with it:
@@ -113,7 +59,7 @@ This element supports all [global attributes](/en-US/docs/Web/HTML/Global_attrib
 
 ## Usage notes
 
-The `<source>` element is a **{{glossary("void element")}}**, which means that it not only has no content but also has no closing tag. That is, you _never_ use "`</source>`" in your HTML.
+The `<source>` element is a **{{glossary("void element")}}**, which means that it not only has no content but also has no closing tag. That is, you _never_ use `</source>` in your HTML.
 
 The browser goes through a list of `<source>` elements to find a format it supports. It uses the first one it can display. For each `<source>` element:
 
@@ -154,7 +100,7 @@ This example demonstrates how to offer an alternate source file for viewports ab
 </video>
 ```
 
-For more examples, the [Video and audio content](/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content) article in the Learn area is a great resource.
+For more examples, the [HTML video and audio](/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_video_and_audio) article in the Learn area is a great resource.
 
 ### Using the `media` attribute with `<picture>`
 
@@ -200,6 +146,62 @@ A [media query](/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries) allow
 </picture>
 ```
 
+## Technical summary
+
+<table class="properties">
+  <tbody>
+    <tr>
+      <th scope="row">
+        <a href="/en-US/docs/Web/HTML/Content_categories"
+          >Content categories</a
+        >
+      </th>
+      <td>None.</td>
+    </tr>
+    <tr>
+      <th scope="row">Permitted content</th>
+      <td>None; it is a {{Glossary("void element")}}.</td>
+    </tr>
+    <tr>
+      <th scope="row">Tag omission</th>
+      <td>Must have a start tag and must not have an end tag.</td>
+    </tr>
+    <tr>
+      <th scope="row">Permitted parents</th>
+      <td>
+        <div>
+          A media element—{{HTMLElement("audio")}} or
+          {{HTMLElement("video")}}—and it must be placed before any
+          <a href="/en-US/docs/Web/HTML/Content_categories#flow_content"
+            >flow content</a
+          >
+          or {{HTMLElement("track")}} element.
+        </div>
+        <div>
+          A {{HTMLElement("picture")}} element, and it must be placed
+          before the {{HTMLElement("img")}} element.
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Implicit ARIA role</th>
+      <td>
+        <a href="https://www.w3.org/TR/html-aria/#dfn-no-corresponding-role"
+          >No corresponding role</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Permitted ARIA roles</th>
+      <td>No <code>role</code> permitted</td>
+    </tr>
+    <tr>
+      <th scope="row">DOM interface</th>
+      <td>{{domxref("HTMLSourceElement")}}</td>
+    </tr>
+  </tbody>
+</table>
+
 ## Specifications
 
 {{Specifications}}
@@ -215,4 +217,4 @@ A [media query](/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries) allow
 - {{HTMLElement("video")}} element
 - [Image file type and format guide](/en-US/docs/Web/Media/Formats/Image_types)
 - [Media type and format guide](/en-US/docs/Web/Media/Formats)
-- [Web performance](/en-US/docs/Learn/Performance)
+- [Web performance](/en-US/docs/Learn_web_development/Extensions/Performance)
