@@ -4,8 +4,10 @@ slug: Web/Accessibility/ARIA/Roles/search_role
 page-type: aria-role
 spec-urls:
   - https://w3c.github.io/aria/#search
-  - https://w3c.github.io/aria-practices/#aria_lh_search
+  - https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/search.html
 ---
+
+{{AccessibilitySidebar}}
 
 The `search` role is used to identify the search functionality; the section of the page used to search the page, site, or collection of sites.
 
@@ -23,11 +25,11 @@ The `search` role is [a landmark](/en-US/docs/Web/Accessibility/ARIA/Roles#3._la
 
 When a {{HTMLElement('form')}} is a search form, use the `search` role instead of [`form`](/en-US/docs/Web/Accessibility/ARIA/Roles/form_role) role.
 
-```HTML
+```html
 <form id="search" role="search">
   <label for="search-input">Search this site</label>
-  <input type="search" id="search-input" name="search" spellcheck="false">
-  <input value="Submit" type="submit">
+  <input type="search" id="search-input" name="search" spellcheck="false" />
+  <input value="Submit" type="submit" />
 </form>
 ```
 
@@ -94,11 +96,3 @@ Screen readers will announce the type of role the landmark is. Because of this, 
 - The {{HTMLElement('search')}} element
 - [`<input type="search">`](/en-US/docs/Web/HTML/Element/input/search)
 - [Using HTML sections and outlines](/en-US/docs/Web/HTML/Element/Heading_Elements)
-
-<section id="Quick_links">
-
-1. [**WAI-ARIA roles**](/en-US/docs/Web/Accessibility/ARIA/Roles)
-
-   {{ListSubpagesForSidebar("/en-US/docs/Web/Accessibility/ARIA/Roles")}}
-
-</section>

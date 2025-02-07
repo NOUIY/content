@@ -1,5 +1,5 @@
 ---
-title: ":nth-last-child()"
+title: :nth-last-child()
 slug: Web/CSS/:nth-last-child
 page-type: css-pseudo-class
 browser-compat: css.selectors.nth-last-child
@@ -49,7 +49,8 @@ By passing a selector argument, we can select the **nth-last** element that matc
 }
 ```
 
-> **Note:** This is different from moving the selector outside of the function, like:
+> [!NOTE]
+> This is different from moving the selector outside of the function, like:
 
 ```css
 li.important: nth-last-child(-n + 3);
@@ -236,7 +237,7 @@ li:nth-last-child(odd of .noted) {
 
 #### Result
 
-Items with `class="noted"` have a think bottom border and items 1, 7, 14, and 20 have a solid background as they are the _odd_ list items with `class="noted"`.
+Items with `class="noted"` have a thick bottom border and items 1, 7, 14, and 20 have a solid background as they are the _odd_ list items with `class="noted"`.
 
 {{EmbedLiveSample('of_selector_syntax_example', 550, 120)}}
 

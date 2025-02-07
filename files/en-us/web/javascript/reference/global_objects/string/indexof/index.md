@@ -65,7 +65,7 @@ Strings are zero-indexed: The index of a string's first character is `0`, and th
 
 ```js
 "Blue Whale".indexOf("Blue"); // returns  0
-"Blue Whale".indexOf("Blute"); // returns -1
+"Blue Whale".indexOf("Wale"); // returns -1
 "Blue Whale".indexOf("Whale", 0); // returns  5
 "Blue Whale".indexOf("Whale", 5); // returns  5
 "Blue Whale".indexOf("Whale", 7); // returns -1
@@ -88,7 +88,7 @@ When checking if a specific substring occurs within a string, the correct way to
 
 ```js
 "Blue Whale".indexOf("Blue") !== -1; // true; found 'Blue' in 'Blue Whale'
-"Blue Whale".indexOf("Bloe") !== -1; // false; no 'Bloe' in 'Blue Whale'
+"Blue Whale".indexOf("Wale") !== -1; // false; no 'Wale' in 'Blue Whale'
 ```
 
 ## Examples
@@ -110,7 +110,7 @@ console.log(str.indexOf("new")); // 6
 The following example defines two string variables.
 
 The variables contain the same string, except that the second string contains uppercase
-letters. The first {{domxref("console.log()")}} method displays `19`. But
+letters. The first {{domxref("console/log_static", "console.log()")}} method displays `19`. But
 because the `indexOf()` method is case sensitive, the string
 `"cheddar"` is not found in `myCapString`, so the second
 `console.log()` method displays `-1`.

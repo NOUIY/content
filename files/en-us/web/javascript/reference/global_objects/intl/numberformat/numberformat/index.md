@@ -29,7 +29,7 @@ Intl.NumberFormat(locales, options)
 
 - `locales` {{optional_inline}}
 
-  - : A string with a BCP 47 language tag or an {{jsxref("Intl.Locale")}} instance, or an array of such locale identifiers. For the general form and interpretation of the `locales` argument, see [the parameter description on the `Intl` main page](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locales_argument).
+  - : A string with a BCP 47 language tag or an {{jsxref("Intl.Locale")}} instance, or an array of such locale identifiers. The runtime's default locale is used when `undefined` is passed or when none of the specified locale identifiers is supported. For the general form and interpretation of the `locales` argument, see [the parameter description on the `Intl` main page](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locales_argument).
 
     The following Unicode extension key is allowed:
 
@@ -48,7 +48,7 @@ Intl.NumberFormat(locales, options)
   - : The locale matching algorithm to use. Possible values are `"lookup"` and `"best fit"`; the default is `"best fit"`.
     For information about this option, see [Locale identification and negotiation](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locale_identification_and_negotiation).
 - `numberingSystem`
-  - : The numbering system to use for number formatting, such as `"arab"`, `"hans"`, `"mathsans"`, and so on. For a list of supported numbering system types, see [`Intl.Locale.prototype.getNumberingSystems()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/getNumberingSystems#supported_numbering_system_types). This option can also be set through the `nu` Unicode extension key; if both are provided, this `options` property takes precedence.
+  - : The numbering system to use for number formatting, such as `"arab"`, `"hans"`, `"mathsans"`, and so on. For a list of supported numbering system types, see [`Intl.supportedValuesOf()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/supportedValuesOf#supported_numbering_system_types). This option can also be set through the `nu` Unicode extension key; if both are provided, this `options` property takes precedence.
 
 #### Style options
 
@@ -65,7 +65,7 @@ Depending on the `style` used, some of them may be ignored, and others may be re
     - `"unit"`
       - : For unit formatting.
 - `currency`
-  - : The currency to use in currency formatting. Possible values are the ISO 4217 currency codes, such as `"USD"` for the US dollar, `"EUR"` for the euro, or `"CNY"` for the Chinese RMB — see the [Current currency & funds code list](https://en.wikipedia.org/wiki/ISO_4217#List_of_ISO_4217_currency_codes). There is no default value; if the `style` is `"currency"`, the `currency` property must be provided.
+  - : The currency to use in currency formatting. Possible values are the ISO 4217 currency codes, such as `"USD"` for the US dollar, `"EUR"` for the euro, or `"CNY"` for the Chinese RMB — see [`Intl.supportedValuesOf()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/supportedValuesOf#supported_currency_identifiers). There is no default value; if the `style` is `"currency"`, the `currency` property must be provided. It is normalized to uppercase.
 - `currencyDisplay`
   - : How to display the currency in currency formatting.
     - `"code"`
@@ -79,7 +79,7 @@ Depending on the `style` used, some of them may be ignored, and others may be re
 - `currencySign`
   - : In many locales, accounting format means to wrap the number with parentheses instead of appending a minus sign. Possible values are `"standard"` and `"accounting"`; the default is `"standard"`.
 - `unit`
-  - : The unit to use in `unit` formatting, Possible values are core unit identifiers, defined in [UTS #35, Part 2, Section 6](https://unicode.org/reports/tr35/tr35-general.html#Unit_Elements). A [subset](https://tc39.es/ecma402/#table-sanctioned-single-unit-identifiers) of units from the [full list](https://github.com/unicode-org/cldr/blob/main/common/validity/unit.xml) was selected for use in ECMAScript. Pairs of simple units can be concatenated with "-per-" to make a compound unit. There is no default value; if the `style` is `"unit"`, the `unit` property must be provided.
+  - : The unit to use in `unit` formatting, Possible values are listed in [`Intl.supportedValuesOf()`](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/supportedValuesOf#supported_unit_identifiers). Pairs of simple units can be concatenated with "-per-" to make a compound unit. There is no default value; if the `style` is `"unit"`, the `unit` property must be provided.
 - `unitDisplay`
   - : The unit formatting style to use in `unit` formatting. Possible values are:
     - `"short"` (default)
@@ -96,16 +96,13 @@ The following properties are also supported by {{jsxref("Intl.PluralRules")}}.
 - `minimumIntegerDigits`
   - : The minimum number of integer digits to use. A value with a smaller number of integer digits than this number will be left-padded with zeros (to the specified length) when formatted. Possible values are from `1` to `21`; the default is `1`.
 - `minimumFractionDigits`
-  - : The minimum number of fraction digits to use. Possible values are from `0` to `20`; the default for plain number and percent formatting is `0`; the default for currency formatting is the number of minor unit digits provided by the [ISO 4217 currency code list](https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml) (2 if the list doesn't provide that information).
+  - : The minimum number of fraction digits to use. Possible values are from `0` to `100`; the default for plain number and percent formatting is `0`; the default for currency formatting is the number of minor unit digits provided by the [ISO 4217 currency code list](https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml) (2 if the list doesn't provide that information). See [SignificantDigits/FractionDigits default values](#significantdigitsfractiondigits_default_values) for when this default gets applied.
 - `maximumFractionDigits`
-  - : The maximum number of fraction digits to use. Possible values are from `0` to `20`; the default for plain number formatting is the larger of `minimumFractionDigits` and `3`; the default for currency formatting is the larger of `minimumFractionDigits` and the number of minor unit digits provided by the [ISO 4217 currency code list](https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml) (2 if the list doesn't provide that information); the default for percent formatting is the larger of `minimumFractionDigits` and 0.
+  - : The maximum number of fraction digits to use. Possible values are from `0` to `100`; the default for plain number formatting is the larger of `minimumFractionDigits` and `3`; the default for currency formatting is the larger of `minimumFractionDigits` and the number of minor unit digits provided by the [ISO 4217 currency code list](https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml) (2 if the list doesn't provide that information); the default for percent formatting is the larger of `minimumFractionDigits` and 0. See [SignificantDigits/FractionDigits default values](#significantdigitsfractiondigits_default_values) for when this default gets applied.
 - `minimumSignificantDigits`
-  - : The minimum number of significant digits to use. Possible values are from `1` to `21`; the default is `1`.
+  - : The minimum number of significant digits to use. Possible values are from `1` to `21`; the default is `1`. See [SignificantDigits/FractionDigits default values](#significantdigitsfractiondigits_default_values) for when this default gets applied.
 - `maximumSignificantDigits`
-  - : The maximum number of significant digits to use. Possible values are from `1` to `21`; the default is `21`.
-
-The above properties fall into two groups: `minimumIntegerDigits`, `minimumFractionDigits`, and `maximumFractionDigits` in one group, `minimumSignificantDigits` and `maximumSignificantDigits` in the other. If properties from both groups are specified, conflicts in the resulting display format are resolved based on th value of the [`roundingPriority`](#roundingpriority) property.
-
+  - : The maximum number of significant digits to use. Possible values are from `1` to `21`; the default is `21`. See [SignificantDigits/FractionDigits default values](#significantdigitsfractiondigits_default_values) for when this default gets applied.
 - `roundingPriority`
 
   - : Specify how rounding conflicts will be resolved if both "FractionDigits" ([`minimumFractionDigits`](#minimumfractiondigits)/[`maximumFractionDigits`](#maximumfractiondigits)) and "SignificantDigits" ([`minimumSignificantDigits`](#minimumsignificantdigits)/[`maximumSignificantDigits`](#maximumsignificantdigits)) are specified.
@@ -118,11 +115,13 @@ The above properties fall into two groups: `minimumIntegerDigits`, `minimumFract
     - `"lessPrecision"`
       - : The result from the property that results in less precision is used.
 
+    The value `"auto"` is normalized to `"morePrecision"` if `notation` is `"compact"` and none of the four "FractionDigits"/"SignificantDigits" options are set.
+
     Note that for values other than `auto` the result with more precision is calculated from the [`maximumSignificantDigits`](#minimumsignificantdigits) and [`maximumFractionDigits`](#maximumfractiondigits) (minimum fractional and significant digit settings are ignored).
 
 - `roundingIncrement`
 
-  - : Indicates the increment at which rounding should take place relative to the calculated rounding magnitude. Possible values are `1`, `2`, `5`, `10`, `20`, `25`, `50`, `100`, `200`, `250`, `500`, `1000`, `2000`, `2500`, and `5000`. It cannot be mixed with significant-digits rounding or any setting of `roundingPriority` other than `auto`.
+  - : Indicates the increment at which rounding should take place relative to the calculated rounding magnitude. Possible values are `1`, `2`, `5`, `10`, `20`, `25`, `50`, `100`, `200`, `250`, `500`, `1000`, `2000`, `2500`, and `5000`; the default is `1`. It cannot be mixed with significant-digits rounding or any setting of `roundingPriority` other than `auto`.
 
 - `roundingMode`
 
@@ -157,6 +156,15 @@ The above properties fall into two groups: `minimumIntegerDigits`, `minimumFract
     - `"stripIfInteger"`
       - : Remove the fraction digits _if_ they are all zero. This is the same as `"auto"` if any of the fraction digits is non-zero.
 
+##### SignificantDigits/FractionDigits default values
+
+For the four options above (the `FractionDigits` and `SignificantDigits` options), we mentioned their defaults; however, these defaults are _not unconditionally applied_. They are only applied when the property is actually going to be used, which depends on the [`roundingPriority`](#roundingpriority) and [`notation`](#notation) settings. Specifically:
+
+- If `roundingPriority` is not `"auto"`, then all four options apply.
+- If `roundingPriority` is `"auto"` and at least one `SignificantDigits` option is set, then the `SignificantDigits` options apply and the `FractionDigits` options are ignored.
+- If `roundingPriority` is `"auto"`, and either at least one `FractionDigits` option is set or `notation` is not `"compact"`, then the `FractionDigits` options apply and the `SignificantDigits` options are ignored.
+- If `roundingPriority` is `"auto"`, `notation` is `"compact"`, and none of the four options are set, then they are set to `{ minimumFractionDigits: 0, maximumFractionDigits: 0, minimumSignificantDigits: 1, maximumSignificantDigits: 2 }`, regardless of the defaults mentioned above, and `roundingPriority` is set to `"morePrecision"`.
+
 #### Other options
 
 - `notation`
@@ -181,8 +189,12 @@ The above properties fall into two groups: `minimumIntegerDigits`, `minimumFract
       - : Display grouping separators based on the locale preference, which may also be dependent on the currency.
     - `"min2"`
       - : Display grouping separators when there are at least 2 digits in a group.
+    - `true`
+      - : Same as `"always"`.
+    - `false`
+      - : Display no grouping separators.
 
-    The default is `"min2"` if `notation` is `"compact"`, and `"auto"` otherwise. The boolean values `true` and `false` are accepted, but are always converted to the default value.
+    The default is `"min2"` if `notation` is `"compact"`, and `"auto"` otherwise. The string values `"true"` and `"false"` are accepted, but are always converted to the default value.
 
 - `signDisplay`
   - : When to display the sign for the number. Possible values are:
@@ -201,7 +213,8 @@ The above properties fall into two groups: `minimumIntegerDigits`, `minimumFract
 
 A new `Intl.NumberFormat` object.
 
-> **Note:** The text below describes behavior that is marked by the specification as "optional". It may not work in all environments. Check the [browser compatibility table](#browser_compatibility).
+> [!NOTE]
+> The text below describes behavior that is marked by the specification as "optional". It may not work in all environments. Check the [browser compatibility table](#browser_compatibility).
 
 Normally, `Intl.NumberFormat()` can be called with or without [`new`](/en-US/docs/Web/JavaScript/Reference/Operators/new), and a new `Intl.NumberFormat` instance is returned in both cases. However, if the [`this`](/en-US/docs/Web/JavaScript/Reference/Operators/this) value is an object that is [`instanceof`](/en-US/docs/Web/JavaScript/Reference/Operators/instanceof) `Intl.NumberFormat` (doesn't necessarily mean it's created via `new Intl.NumberFormat`; just that it has `Intl.NumberFormat.prototype` in its prototype chain), then the value of `this` is returned instead, with the newly created `Intl.NumberFormat` object hidden in a `[Symbol(IntlLegacyConstructedSymbol)]` property (a unique symbol that's reused between instances).
 
@@ -380,7 +393,8 @@ new Intl.NumberFormat("bn", {
 
 You can specify the minimum or maximum number of fractional, integer or significant digits to display when formatting a number.
 
-> **Note:** If both significant and fractional digit limits are specified, then the actual formatting depends on the [`roundingPriority`](#roundingpriority).
+> [!NOTE]
+> If both significant and fractional digit limits are specified, then the actual formatting depends on the [`roundingPriority`](#roundingpriority).
 
 #### Using FractionDigits and IntegerDigits
 
@@ -426,7 +440,8 @@ console.log(
 // "4.331"
 ```
 
-> **Warning:** Watch out for default values as they may affect formatting even if not specified in your code.
+> [!WARNING]
+> Watch out for default values as they may affect formatting even if not specified in your code.
 > The default maximum digit value is `3` for plain values, `2` for currency, and may have different values for other predefined types.
 
 The formatted value above is rounded to 3 digits, even though we didn't specify the maximum digits!
@@ -508,9 +523,10 @@ console.log(
 // "54.33145000"
 ```
 
-> **Warning:** Watch out for default values as they may affect formatting.
+> [!WARNING]
+> Watch out for default values as they may affect formatting.
 > If only one `SignificantDigits` property is used, then its counterpart will automatically be applied with the default value.
-> The default maximum and minimum significant digit values are 20 and 1, respectively.
+> The default maximum and minimum significant digit values are 21 and 1, respectively.
 
 #### Specifying significant and fractional digits at the same time
 
@@ -642,7 +658,8 @@ console.log(`morePrecision - ${bothMore.format(1)}`);
 
 The reason for this is that only the "maximum precision" values are used for the calculation, and the default value of `maximumSignificantDigits` is much higher than `maximumFractionDigits`.
 
-> **Note:** The working group have proposed a modification of the algorithm where the formatter should evaluate the result of using the specified fractional and significant digits independently (taking account of both minimum and maximum values).
+> [!NOTE]
+> The working group have proposed a modification of the algorithm where the formatter should evaluate the result of using the specified fractional and significant digits independently (taking account of both minimum and maximum values).
 > It will then select the option that displays more fractional digits if `morePrecision` is set, and fewer if `lessPrecision` is set.
 > This will result in more intuitive behavior for this case.
 

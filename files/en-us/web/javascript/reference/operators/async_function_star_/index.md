@@ -7,7 +7,7 @@ browser-compat: javascript.operators.async_generator_function
 
 {{jsSidebar("Operators")}}
 
-The **`async function*`** keywords can be used to define an asynchronous generator function inside an expression.
+The **`async function*`** keywords can be used to define an async generator function inside an expression.
 
 You can also define async generator functions using the [`async function*` declaration](/en-US/docs/Web/JavaScript/Reference/Statements/async_function*).
 
@@ -37,7 +37,8 @@ async function* name(param0, param1, /* …, */ paramN) {
 }
 ```
 
-> **Note:** An [expression statement](/en-US/docs/Web/JavaScript/Reference/Statements/Expression_statement) cannot begin with the keywords `async function` to avoid ambiguity with an [`async function*` declaration](/en-US/docs/Web/JavaScript/Reference/Statements/async_function*). The `async function` keywords only begin an expression when they appear in a context that cannot accept statements.
+> [!NOTE]
+> An [expression statement](/en-US/docs/Web/JavaScript/Reference/Statements/Expression_statement) cannot begin with the keywords `async function` to avoid ambiguity with an [`async function*` declaration](/en-US/docs/Web/JavaScript/Reference/Statements/async_function*). The `async function` keywords only begin an expression when they appear in a context that cannot accept statements.
 
 ### Parameters
 
@@ -54,7 +55,7 @@ An `async function*` expression is very similar to, and has almost the same synt
 
 ## Examples
 
-### Using async function\*
+### Using async function\* expression
 
 The following example defines an unnamed asynchronous generator function and assigns it to `x`. The function yields the square of its argument:
 
@@ -77,9 +78,10 @@ x(6)
 
 ## See also
 
+- [Functions](/en-US/docs/Web/JavaScript/Guide/Functions) guide
+- [Functions](/en-US/docs/Web/JavaScript/Reference/Functions)
 - {{jsxref("Statements/async_function*", "async function*")}}
 - {{jsxref("AsyncGeneratorFunction")}}
 - [Iteration protocols](/en-US/docs/Web/JavaScript/Reference/Iteration_protocols)
 - {{jsxref("Operators/yield", "yield")}}
 - {{jsxref("Operators/yield*", "yield*")}}
-- {{jsxref("Functions", "Functions", "", 1)}}

@@ -12,10 +12,11 @@ It modifies the coordinate space of the CSS [visual formatting model](/en-US/doc
 
 {{EmbedInteractiveExample("pages/css/transform.html")}}
 
-If the property has a value different than `none`, a [stacking context](/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context) will be created.
+If the property has a value different from `none`, a [stacking context](/en-US/docs/Web/CSS/CSS_positioned_layout/Understanding_z-index/Stacking_context) will be created.
 In that case, the element will act as a [containing block](/en-US/docs/Web/CSS/Containing_block) for any `position: fixed;` or `position: absolute;` elements that it contains.
 
-> **Warning:** Only transformable elements can be `transform`ed.
+> [!WARNING]
+> Only transformable elements can be `transform`ed.
 > That is, all elements whose layout is governed by the CSS box model except for: [non-replaced inline boxes](/en-US/docs/Glossary/Inline-level_content), [table-column boxes](/en-US/docs/Web/HTML/Element/col), and [table-column-group boxes](/en-US/docs/Web/HTML/Element/colgroup).
 
 ## Syntax
@@ -49,7 +50,7 @@ transform: skewY(1.07rad);
 
 /* Multiple function values */
 transform: translateX(10px) rotate(10deg) translateY(5px);
-transform: perspective(500px) translate(10px, 0, 20px) rotateY(3deg);
+transform: perspective(500px) translate3d(10px, 0, 20px) rotateY(30deg);
 
 /* Global values */
 transform: inherit;
@@ -61,8 +62,6 @@ transform: unset;
 
 The `transform` property may be specified as either the keyword value `none` or as one or more `<transform-function>` values.
 
-If {{cssxref("transform-function/perspective", "perspective()")}} is one of multiple function values, it must be listed first.
-
 ### Values
 
 - {{cssxref("&lt;transform-function&gt;")}}
@@ -71,7 +70,7 @@ If {{cssxref("transform-function/perspective", "perspective()")}} is one of mult
 - `none`
   - : Specifies that no transform should be applied.
 
-## Accessibility concerns
+## Accessibility
 
 Scaling/zooming animations are problematic for accessibility, as they are a common trigger for certain types of migraine.
 If you need to include such animations on your website, you should provide a control to allow users to turn off animations, preferably site-wide.
@@ -197,4 +196,5 @@ Please see [Using CSS transforms](/en-US/docs/Web/CSS/CSS_transforms/Using_CSS_t
 - [Using CSS transforms](/en-US/docs/Web/CSS/CSS_transforms/Using_CSS_transforms)
 - {{cssxref("&lt;transform-function&gt;")}} data type with all the transform functions explained.
 - Individual CSS properties: {{cssxref('translate')}}, {{cssxref('rotate')}}, and {{cssxref('scale')}} (there is no `skew` property).
+- SVG {{SVGAttr("transform")}} attribute
 - Online tool to visualize CSS Transform functions: [CSS Transform Playground](https://css-transform.moro.es/)

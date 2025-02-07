@@ -19,6 +19,10 @@ The **CSS transitions** module lets you create gradual transitions between the v
 - {{cssxref("transition-property")}}
 - {{cssxref("transition-timing-function")}}
 
+### At rules
+
+- {{cssxref("@starting-style")}}
+
 ## Guides
 
 - [Using CSS transitions](/en-US/docs/Web/CSS/CSS_transitions/Using_CSS_transitions)
@@ -30,4 +34,5 @@ The **CSS transitions** module lets you create gradual transitions between the v
 
 ## See also
 
-- Related to CSS transitions, [CSS animations](/en-US/docs/Web/CSS/CSS_animations) provide finer control over animated properties.
+- The {{cssxref("interpolate-size")}} property and {{cssxref("calc-size()")}} function for enabling transitions to and from [intrinsic size values](/en-US/docs/Glossary/Intrinsic_Size).
+- [CSS animations](/en-US/docs/Web/CSS/CSS_animations) module.

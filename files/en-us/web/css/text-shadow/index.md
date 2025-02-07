@@ -7,7 +7,7 @@ browser-compat: css.properties.text-shadow
 
 {{CSSRef}}
 
-The **`text-shadow`** CSS property adds shadows to text. It accepts a comma-separated list of shadows to be applied to the text and any of its [`decorations`](/en-US/docs/Web/CSS/text-decoration). Each shadow is described by some combination of X and Y offsets from the element, blur radius, and color.
+The **`text-shadow`** [CSS](/en-US/docs/Web/CSS) property adds shadows to text. It accepts a comma-separated list of shadows to be applied to the text and any of its [`decorations`](/en-US/docs/Web/CSS/text-decoration). Each shadow is described by some combination of X and Y offsets from the element, blur radius, and color.
 
 {{EmbedInteractiveExample("pages/css/text-shadow.html")}}
 
@@ -65,7 +65,7 @@ This property applies to both {{cssxref("::first-line")}} and {{cssxref("::first
 
 ## Examples
 
-### Simple shadow
+### Basic shadow
 
 ```css
 .red-text-shadow {
@@ -80,7 +80,7 @@ This property applies to both {{cssxref("::first-line")}} and {{cssxref("::first
 </p>
 ```
 
-{{EmbedLiveSample('Simple_shadow', '660px', '90px')}}
+{{EmbedLiveSample('Basic_shadow', '660px', '90px')}}
 
 ### Multiple shadows
 
@@ -119,4 +119,3 @@ This property applies to both {{cssxref("::first-line")}} and {{cssxref("::first
 - The {{cssxref("&lt;color&gt;")}} data type (for specifying the shadow color)
 - {{cssxref("box-shadow")}}
 - {{cssxref("filter-function/drop-shadow", "drop-shadow()")}}
-- [Applying color to HTML elements using CSS](/en-US/docs/Web/CSS/CSS_colors/Applying_color)

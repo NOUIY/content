@@ -48,8 +48,8 @@ _No changes._
 
 #### Removals
 
-- The non-standard [`-moz-box` and `-moz-inline-box`](/en-US/docs/Mozilla/Gecko/Chrome/CSS/display-xul) {{CSSxRef("display")}} values have been hidden from web content ([Firefox bug 1496961](https://bugzil.la/1496961)).
-- The non-standard {{CSSxRef("::-moz-tree")}} [pseudo-elements](/en-US/docs/Web/CSS/Pseudo-elements) have been hidden from web content ([Firefox bug 1496961](https://bugzil.la/1496961)).
+- The non-standard `-moz-box` and `-moz-inline-box` {{CSSxRef("display")}} values have been hidden from web content ([Firefox bug 1496961](https://bugzil.la/1496961)).
+- The non-standard `::-moz-tree` [pseudo-element](/en-US/docs/Web/CSS/Pseudo-elements) has been hidden from web content ([Firefox bug 1496961](https://bugzil.la/1496961)).
 - The `layout.css.filters.enabled` preference has been removed; [CSS filters](/en-US/docs/Web/CSS/CSS_filter_effects) can no longer be disabled ([Firefox bug 1408841](https://bugzil.la/1408841)).
 - A previous change — to swap the values of the 2-value {{cssxref("overflow")}} syntax so block is specified first and inline second ([Firefox bug 1481866](https://bugzil.la/1481866)) — has been reverted ([Firefox bug 1492567](https://bugzil.la/1492567)). See [Bug 1481866 comment 14](https://bugzil.la/1481866#c14) for why.
 
@@ -61,7 +61,7 @@ _No changes._
 
 - The TC39 [Well-formed JSON.stringify](https://github.com/tc39/proposal-well-formed-stringify) proposal has been implemented, to prevent {{jsxref("JSON.stringify")}} from returning ill-formed Unicode strings ([Firefox bug 1469021](https://bugzil.la/1469021)).
 - Proxied functions can now be passed to {{jsxref("Function.prototype.toString")}}`.call()` ([Firefox bug 1440468](https://bugzil.la/1440468)).
-- In the [`WebAssembly.Global()`](/en-US/docs/WebAssembly/JavaScript_interface/Global) constructor, if no value is specified a typed 0 value is used. This is specified by the [`DefaultValue` algorithm](https://webassembly.github.io/spec/js-api/#defaultvalue) ([Firefox bug 1490286](https://bugzil.la/1490286)).
+- In the [`WebAssembly.Global()`](/en-US/docs/WebAssembly/Reference/JavaScript_interface/Global) constructor, if no value is specified a typed 0 value is used. This is specified by the [`DefaultValue` algorithm](https://webassembly.github.io/spec/js-api/#defaultvalue) ([Firefox bug 1490286](https://bugzil.la/1490286)).
 
 ### APIs
 
@@ -91,7 +91,7 @@ _No changes._
 #### Media, Web Audio, and WebRTC
 
 - The {{domxref("PannerNode.refDistance")}}, {{domxref("PannerNode.maxDistance")}}, {{domxref("PannerNode.rolloffFactor")}}, and {{domxref("PannerNode.coneOuterGain")}} properties now correctly throw exceptions when set to values outside their accepted ranges ([Firefox bug 1487963](https://bugzil.la/1487963)).
-- {{domxref("RTCRtpEncodingParameters")}} settings changed via {{domxref("RTCRtpSender.setParameters()")}} used to not update if the changes were made during a call. They will now update live, without renegotiation ([Firefox bug 1253499](https://bugzil.la/1253499)).
+- `RTCRtpEncodingParameters` settings changed via {{domxref("RTCRtpSender.setParameters()")}} used to not update if the changes were made during a call. They will now update live, without renegotiation ([Firefox bug 1253499](https://bugzil.la/1253499)).
 - {{domxref("RTCIceCandidateStats.relayProtocol")}} has been implemented — this is the standardized version of `RTCIceCandidateStats.mozLocalTransport`, which has now been deprecated ([Firefox bug 1435789](https://bugzil.la/1435789)).
 - Automatic Gain Control (AGC) is now enabled by default; this can be changed using the preference `media.getusermedia.agc_enabled` ([Firefox bug 1496714](https://bugzil.la/1496714)).
 
@@ -163,4 +163,4 @@ _No changes._
 
 ## Older versions
 
-{{Firefox_for_developers(63)}}
+{{Firefox_for_developers}}

@@ -7,7 +7,7 @@ spec-urls: https://drafts.csswg.org/css-grid/
 
 {{CSSRef}}
 
-The **CSS grid layout** module excels at dividing a page into major regions or defining the relationship in terms of size, position, and layer, between parts of a control built from HTML primitives.
+The **CSS grid layout** module excels at dividing a page into major regions or defining the relationship in terms of size, position, and layering between parts of a control built from HTML primitives.
 
 Like tables, grid layout enables an author to align elements into columns and rows. However, many more layouts are either possible or easier with CSS grid than they were with tables. For example, a grid container's child elements could position themselves so they actually overlap and layer, similar to CSS positioned elements.
 
@@ -27,7 +27,7 @@ The example below shows a three-column track grid with new rows created at a min
 .wrapper > div {
   border: 2px solid rgb(233 171 88);
   border-radius: 5px;
-  background-color: rgba(233 171 88 / 0.5);
+  background-color: rgb(233 171 88 / 50%);
   padding: 1em;
   color: #d9480f;
 }
@@ -103,12 +103,6 @@ The example below shows a three-column track grid with new rows created at a min
 - {{CSSxRef("grid-row")}}
 - {{CSSxRef("grid-column")}}
 - {{CSSxRef("grid-area")}}
-- {{CSSxRef("row-gap")}}
-- {{CSSxRef("column-gap")}}
-- {{CSSxRef("gap")}}
-- {{CSSxRef("masonry-auto-flow")}} {{Experimental_Inline}}
-- {{CSSxRef("align-tracks")}} {{Experimental_Inline}}
-- {{CSSxRef("justify-tracks")}} {{Experimental_Inline}}
 
 ### Functions
 
@@ -133,7 +127,7 @@ The example below shows a three-column track grid with new rows created at a min
 - [Grid layout and accessibility](/en-US/docs/Web/CSS/CSS_grid_layout/Grid_layout_and_accessibility)
 - [Realizing common layouts using grids](/en-US/docs/Web/CSS/CSS_grid_layout/Realizing_common_layouts_using_grids)
 - [Subgrid](/en-US/docs/Web/CSS/CSS_grid_layout/Subgrid)
-- [Masonry layout](/en-US/docs/Web/CSS/CSS_grid_layout/Masonry_layout) {{Experimental_Inline}}
+- [Masonry layout](/en-US/docs/Web/CSS/CSS_grid_layout/Masonry_layout)
 
 ## Specifications
 
@@ -141,7 +135,7 @@ The example below shows a three-column track grid with new rows created at a min
 
 ## See also
 
-- Glossary terms:
+- Glossary:
   - [Grid](/en-US/docs/Glossary/Grid)
   - [Grid lines](/en-US/docs/Glossary/Grid_Lines)
   - [Grid tracks](/en-US/docs/Glossary/Grid_Tracks)
@@ -151,8 +145,14 @@ The example below shows a three-column track grid with new rows created at a min
   - [Grid axis](/en-US/docs/Glossary/Grid_Axis)
   - [Grid row](/en-US/docs/Glossary/Grid_Row)
   - [Grid column](/en-US/docs/Glossary/Grid_Column)
-- [Grid by Example](https://gridbyexample.com/) - A collection of usage examples and video tutorials
-- [CSS Grid Reference - Codrops](https://tympanus.net/codrops/css_reference/grid/)
-- [CSS Grid Inspector - Firefox DevTools](https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/examine_grid_layouts/index.html)
-- [CSS Grid Playground](https://mozilladevelopers.github.io/playground/css-grid/)
-- [CSS Grid Garden](https://cssgridgarden.com) - A game for learning CSS grid
+- [CSS box alignment](/en-US/docs/Web/CSS/CSS_box_alignment) module
+  - {{CSSxRef("row-gap")}}
+  - {{CSSxRef("column-gap")}}
+  - {{CSSxRef("gap")}}
+- [CSS flexible box layout](/en-US/docs/Web/CSS/CSS_flexible_box_layout) module
+- [CSS display](/en-US/docs/Web/CSS/CSS_display) module
+- [Grid by example](https://gridbyexample.com/)
+- [CSS grid reference](https://tympanus.net/codrops/css_reference/grid/) via Codrops
+- [CSS grid inspector - Firefox DevTools](https://firefox-source-docs.mozilla.org/devtools-user/page_inspector/how_to/examine_grid_layouts/index.html)
+- [CSS grid playground](https://mozilladevelopers.github.io/playground/css-grid/)
+- [CSS grid garden](https://cssgridgarden.com/) - A game for learning CSS grid

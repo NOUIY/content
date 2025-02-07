@@ -19,7 +19,7 @@ Firefox 55 was released on August 8, 2017. This article lists key changes that a
 
 ### HTML
 
-- Elements on which [`contenteditable`](/en-US/docs/Web/HTML/Global_attributes#contenteditable) has been set to `true` now use {{htmlelement("div")}} elements to separate different lines of text, to give Firefox parity with other modern browsers ([Firefox bug 1297414](https://bugzil.la/1297414)). See [Differences in markup generation](/en-US/docs/Web/HTML/Global_attributes/contenteditable#differences_in_markup_generation) for more details.
+- Elements on which [`contenteditable`](/en-US/docs/Web/HTML/Global_attributes/contenteditable) has been set to `true` now use {{htmlelement("div")}} elements to separate different lines of text, to give Firefox parity with other modern browsers ([Firefox bug 1297414](https://bugzil.la/1297414)). See [Differences in markup generation](/en-US/docs/Web/HTML/Global_attributes/contenteditable#differences_in_markup_generation) for more details.
 - Enable `dom.forms.datetime` by default on Nightly ([Firefox bug 1366188](https://bugzil.la/1366188)).
 
 ### CSS
@@ -59,7 +59,7 @@ Firefox 55 was released on August 8, 2017. This article lists key changes that a
 
 #### DOM
 
-- The {{domxref("Window")}} properties {{domxref("Window.scrollX", "scrollX")}} and {{domxref("Window.scrollY", "scrollY")}} (as well as their aliases {{domxref("Window.pageXOffset", "pageXOffset")}} and {{domxref("Window.pageYOffset", "pageYOffset")}}) have been updated to be subpixel precise. Instead of returning an integer, these now return a floating-point value which more accurately describes the scroll position on subpixel-precise displays ([Firefox bug 1151421](https://bugzil.la/1151421)). If need be, you can use {{jsxref("Math.round()")}} to convert them into integers.
+- The {{domxref("Window")}} properties {{domxref("Window.scrollX", "scrollX")}} and {{domxref("Window.scrollY", "scrollY")}} (as well as their aliases `pageXOffset` and `pageYOffset` have been updated to be subpixel precise. Instead of returning an integer, these now return a floating-point value which more accurately describes the scroll position on subpixel-precise displays ([Firefox bug 1151421](https://bugzil.la/1151421)). If need be, you can use {{jsxref("Math.round()")}} to convert them into integers.
 - {{domxref("MediaQueryList")}} (and other related features) have been updated to match the latest spec. See [Firefox bug 1354441](https://bugzil.la/1354441), and also see {{domxref("MediaQueryList")}} and {{domxref("MediaQueryListEvent")}}.
 - Methods of the {{domxref("DOMTokenList")}} that modify the list value now automatically trim whitespace and remove duplicate tokens ([Firefox bug 869788](https://bugzil.la/869788), also see [Trimming of whitespace and removal of duplicates](/en-US/docs/Web/API/DOMTokenList#trimming_of_whitespace_and_removal_of_duplicates)).
 - The {{domxref("HTMLInputElement")}}'s `maxLength` property can now be dynamically altered with JavaScript after the equivalent HTML has been created ([Firefox bug 1352799](https://bugzil.la/1352799)).
@@ -87,7 +87,7 @@ Firefox 55 was released on August 8, 2017. This article lists key changes that a
 #### Workers
 
 - Workers and shared workers can now be created with an identifying `name` property. See the {{domxref("Worker.Worker", "Worker()")}} and {{domxref("SharedWorker.SharedWorker", "SharedWorker()")}} constructors, and the {{domxref("DedicatedWorkerGlobalScope")}} and {{domxref("SharedWorkerGlobalScope")}} interfaces. ([Firefox bug 1364297](https://bugzil.la/1364297)).
-- {{domxref("setTimeout()")}} and {{domxref("setInterval()")}} are now subject to minimum interval throttling for tracking scripts in background tabs — see [Throttling of tracking timeout scripts](/en-US/docs/Web/API/setTimeout#throttling_of_tracking_timeout_scripts) ([Firefox bug 1355311](https://bugzil.la/1355311)).
+- {{domxref("Window.setTimeout()")}}, {{domxref("WorkerGlobalScope.setTimeout()")}}, {{domxref("Window.setInterval()")}} and {{domxref("WorkerGlobalScope.setInterval()")}} are now subject to minimum interval throttling for tracking scripts in background tabs — see [Throttling of tracking timeout scripts](/en-US/docs/Web/API/Window/setTimeout#throttling_of_tracking_timeout_scripts) ([Firefox bug 1355311](https://bugzil.la/1355311)).
 
 #### Service Workers/Push
 
@@ -112,7 +112,7 @@ Firefox 55 was released on August 8, 2017. This article lists key changes that a
 #### Encrypted Media Extensions API
 
 - Firefox currently allows Encrypted Media Extensions to be used in insecure contexts, despite this not being allowed in the specification. This will be changed in the near future, and starting in Firefox 55, deprecation warnings are output to the [web console](https://firefox-source-docs.mozilla.org/devtools-user/web_console/index.html) when this is done. ([Firefox bug 1361000](https://bugzil.la/1361000)).
-- Firefox currently doesn't require that at least one {{domxref("MediaKeySystemCapabilities")}} object be included in the `suggestedConfigurations` parameter passed into {{domxref("Navigator.requestMediaKeySystemAccess()")}}, which the specification does mandate. Starting in Firefox 55, a warning is output to the web console when any audio or video configuration is specified without specifying supported codecs. Soon, failure to include a valid configuration for one or more of audio and video will throw an exception [Firefox bug 1368683](https://bugzil.la/1368683)).
+- Firefox currently doesn't require that at least one `MediaKeySystemCapabilities` object be included in the `suggestedConfigurations` parameter passed into {{domxref("Navigator.requestMediaKeySystemAccess()")}}, which the specification does mandate. Starting in Firefox 55, a warning is output to the web console when any audio or video configuration is specified without specifying supported codecs. Soon, failure to include a valid configuration for one or more of audio and video will throw an exception [Firefox bug 1368683](https://bugzil.la/1368683)).
 
 #### WebGL
 
@@ -120,10 +120,10 @@ Firefox 55 was released on August 8, 2017. This article lists key changes that a
 
 ### Security
 
-- The {{domxref("Geolocation")}} API is now available only to [secure contexts](/en-US/docs/Web/Security/Secure_Contexts) ([Firefox bug 1072859](https://bugzil.la/1072859)).
-- The {{domxref("Storage API")}} is now available only to [secure contexts](/en-US/docs/Web/Security/Secure_Contexts) ([Firefox bug 1268804](https://bugzil.la/1268804)).
+- The [Geolocation API](/en-US/docs/Web/API/Geolocation_API) is now available only to [secure contexts](/en-US/docs/Web/Security/Secure_Contexts) ([Firefox bug 1072859](https://bugzil.la/1072859)).
+- The [Storage API](/en-US/docs/Web/API/Storage_API) is now available only to [secure contexts](/en-US/docs/Web/Security/Secure_Contexts) ([Firefox bug 1268804](https://bugzil.la/1268804)).
 - The loading of mixed content is now allowed on localhost ([Firefox bug 903966](https://bugzil.la/903966)).
-- Loading of remote JAR files has been disabled again ([Firefox bug 1329336](https://bugzil.la/1329336)). See [Security and the jar protocol](/en-US/docs/Mozilla/Security/Security_and_the_jar_protocol) for the full story.
+- Loading of remote JAR files has been disabled again ([Firefox bug 1329336](https://bugzil.la/1329336)).
 
 ### Plugins
 
@@ -132,13 +132,13 @@ Firefox 55 was released on August 8, 2017. This article lists key changes that a
 
 ### Other
 
-- Firefox on Linux can now be made to run in [headless mode](/en-US/docs/Mozilla/Firefox/Headless_mode) using the `-headless` flag (see [Firefox bug 1356681](https://bugzil.la/1356681)).
+- Firefox on Linux can now be made to run in headless mode using the `-headless` flag (see [Firefox bug 1356681](https://bugzil.la/1356681)).
 
 ## Removals from the web platform
 
 ### HTML
 
-- The `xml:base` attribute can no longer be used to set the base URL for paths appearing in the [`style`](/en-US/docs/Web/HTML/Global_attributes#style) attribute, for example —
+- The `xml:base` attribute can no longer be used to set the base URL for paths appearing in the [`style`](/en-US/docs/Web/HTML/Global_attributes/style) attribute, for example —
 
   `<div xml:base="https://example.com/" style="background:url(picture.jpg)"></div>` ([Firefox bug 1350521](https://bugzil.la/1350521)).
 
@@ -152,12 +152,12 @@ Firefox 55 was released on August 8, 2017. This article lists key changes that a
 
 ### APIs
 
-- The `UIEvent.isChar` property has never been supported by any browser but Firefox, and it has never been fully-implemented except on macOS. For that reason, it was removed in Firefox 55 to align with other browsers.
+- The `UIEvent.isChar` property has never been supported by any browser but Firefox, and it has never been fully implemented except on macOS. For that reason, it was removed in Firefox 55 to align with other browsers.
 - The proprietary Firefox OS Device Storage API has been removed from the platform ([Firefox bug 1299500](https://bugzil.la/1299500)).
 - The `aShowDialog` parameter of the non-standard {{domxref("Window.find()")}} method (which could be specified to open up a "Find" dialog in the browser) has been removed ([Firefox bug 1348409](https://bugzil.la/1348409)).
 - The `HTMLFormElement.requestAutoComplete()` method has been removed (see {{domxref("HTMLFormElement")}}) ([Firefox bug 1270740](https://bugzil.la/1270740)).
 - The non-standard, Mozilla-specific, WebRTC offer options `mozDontOfferDataChannel` and `mozBundleOnly` have been removed from the `RTCOfferOptions` dictionary and are no longer supported by {{domxref("RTCPeerConnection.createOffer()")}} ([Firefox bug 1196974](https://bugzil.la/1196974)).
-- Support for the proprietary Firefox OS [Audio Channels API](/en-US/docs/Archive/B2G_OS/API/Audio_Channels_API) has been removed from {{domxref("HTMLMediaElement")}} and {{domxref("AudioContext")}} ([Firefox bug 1358061](https://bugzil.la/1358061)).
+- Support for the proprietary Firefox OS `Audio Channels API` has been removed from {{domxref("HTMLMediaElement")}} and {{domxref("AudioContext")}} ([Firefox bug 1358061](https://bugzil.la/1358061)).
 
 ### SVG
 
@@ -175,4 +175,4 @@ Firefox 55 was released on August 8, 2017. This article lists key changes that a
 
 ## Older versions
 
-{{Firefox_for_developers(54)}}
+{{Firefox_for_developers}}

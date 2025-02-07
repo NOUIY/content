@@ -4,7 +4,7 @@ slug: Web/Accessibility/Understanding_WCAG/Perceivable/Color_contrast
 page-type: guide
 ---
 
-{{QuicklinksWithSubPages("Web/Accessibility/Understanding_WCAG")}}
+{{AccessibilitySidebar}}
 
 The [color contrast](https://www.w3.org/TR/WCAG21/#dfn-contrast-ratio) between background and foreground content (that is, usually text) should be great enough to ensure legibility.
 
@@ -39,7 +39,7 @@ div {
 }
 
 .good {
-  background-color: #fae6fa;
+  background-color: #5a80a9;
 }
 
 .bad {
@@ -47,9 +47,11 @@ div {
 }
 ```
 
-Both pieces of text have their default black color. The "good" `<div>` has a light purple background, which makes the text easy to read:
+Both pieces of text have their default black color.
 
 ### Good Contrast
+
+The "good" `<div>` has a neon blue background, which makes the text easy to read:
 
 ```html
 <div class="good">Good contrast</div>
@@ -64,19 +66,19 @@ div {
   width: 250px;
   padding: 30px;
   border-radius: 20px;
-  box-shadow: 1px 1px 1px black;
+  box-shadow: 4px 4px 4px black;
 }
 
 .good {
-  background-color: #fae6fa;
+  background-color: #5a80a9;
 }
 ```
 
 {{EmbedLiveSample('Good_Contrast', '100%', '100')}}
 
-The "bad" `<div>` on the other hand has a very dark purple background, which makes the text much harder to read:
-
 ### Bad Contrast
+
+The "bad" `<div>` on the other hand has a very dark purple background, which makes the text much harder to read:
 
 ```html
 <div class="bad">Bad contrast</div>
@@ -91,7 +93,7 @@ div {
   width: 250px;
   padding: 30px;
   border-radius: 20px;
-  box-shadow: 1px 1px 1px black;
+  box-shadow: 4px 4px 4px black;
 }
 
 .bad {
@@ -132,6 +134,6 @@ You can also check color contrast on the fly using Firefox's Developer Tools —
 
 ## See also
 
-- [Color and color contrast](/en-US/docs/Learn/Accessibility/CSS_and_JavaScript#color_and_color_contrast)
-- [Multiple labels](/en-US/docs/Learn/Forms/How_to_structure_a_web_form#multiple_labels)
+- [Color and color contrast](/en-US/docs/Learn_web_development/Core/Accessibility/CSS_and_JavaScript#color_and_color_contrast)
+- [Multiple labels](/en-US/docs/Learn_web_development/Extensions/Forms/How_to_structure_a_web_form#multiple_labels)
 - [Understanding Non-Text Contrast](https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html)

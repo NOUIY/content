@@ -8,9 +8,9 @@ browser-compat: api.HTMLDialogElement.cancel_event
 
 {{APIRef}}
 
-The **`cancel`** event fires on a {{HTMLElement("dialog")}} when the user instructs the browser that they wish to dismiss the current open dialog. The browser fires this event when the user presses the <kbd>Esc</kbd> key.
+The **`cancel`** event fires on a {{HTMLElement("dialog")}} element when the user instructs the browser that they wish to dismiss the current open dialog. The browser fires this event when the user presses the <kbd>Esc</kbd> key.
 
-This event does not bubble.
+This event is cancelable but can not bubble.
 
 When a `<dialog>` is dismissed with the <kbd>Esc</kbd> key, both the `cancel` and {{domxref("HTMLDialogElement/close_event", "close")}} events are fired.
 
@@ -30,7 +30,7 @@ A generic {{domxref("Event")}}.
 
 ## Examples
 
-### Live example
+### Canceling a dialog
 
 #### HTML
 
@@ -80,7 +80,7 @@ closeButton.addEventListener("click", () => {
 
 #### Result
 
-{{ EmbedLiveSample('Live_example', '100%', '100px') }}
+{{ EmbedLiveSample('Canceling a dialog', '100%', '100px') }}
 
 ## Specifications
 
@@ -93,4 +93,3 @@ closeButton.addEventListener("click", () => {
 ## See also
 
 - HTML {{HTMLElement("dialog")}} element
-- {{domxref("HTMLDialogElement/close_event", "close")}}
