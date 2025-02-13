@@ -12,7 +12,7 @@ This chapter introduces collections of data which are indexed by a key; `Map` an
 
 ### Map object
 
-A {{jsxref("Map")}} object is a simple key/value map and can iterate its elements in insertion order.
+A {{jsxref("Map")}} object is a key/value map that can iterate its elements in insertion order.
 
 The following code shows some basic operations with a `Map`. See also the {{jsxref("Map")}} reference page for more examples and the complete API. You can use a {{jsxref("Statements/for...of", "for...of")}} loop to return an array of `[key, value]` for each iteration.
 
@@ -42,7 +42,7 @@ sayings.size; // 0
 
 Traditionally, {{jsxref("Object", "objects", "", 1)}} have been used to map strings to values. Objects allow you to set keys to values, retrieve those values, delete keys, and detect whether something is stored at a key. `Map` objects, however, have a few more advantages that make them better maps.
 
-- The keys of an `Object` are [strings](/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) or [symbols](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol), where they can be of any value for a `Map`.
+- The keys of an `Object` are [strings](/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) or [symbols](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol), whereas they can be of any value for a `Map`.
 - You can get the `size` of a `Map` easily, while you have to manually keep track of size for an `Object`.
 - The iteration of maps is in insertion order of the elements.
 - An `Object` has a prototype, so there are default keys in the map. (This can be bypassed using `map = Object.create(null)`.)
@@ -61,7 +61,7 @@ The `WeakMap` API is essentially the same as the `Map` API. However, a `WeakMap`
 
 For more information and example code, see also "Why WeakMap?" on the {{jsxref("WeakMap")}} reference page.
 
-One use case of `WeakMap` objects is to store private data for an object, or to hide implementation details. The following example is from Nick Fitzgerald's blog post ["Hiding Implementation Details with ECMAScript 6 WeakMaps"](https://fitzgeraldnick.com/2014/01/13/hiding-implementation-details-with-e6-weakmaps.html). The private data and methods belong inside the object and are stored in the `privates` object, which is a `WeakMap`. Everything exposed on the instance and prototype is public; everything else is inaccessible from the outside world because `privates` is not exported from the module.
+One use case of `WeakMap` objects is to store private data for an object, or to hide implementation details. The following example is from Nick Fitzgerald's blog post ["Hiding Implementation Details with ECMAScript 6 WeakMaps"](https://fitzgen.com/2014/01/13/hiding-implementation-details-with-e6-weakmaps.html). The private data and methods belong inside the object and are stored in the `privates` object, which is a `WeakMap`. Everything exposed on the instance and prototype is public; everything else is inaccessible from the outside world because `privates` is not exported from the module.
 
 ```js
 const privates = new WeakMap();

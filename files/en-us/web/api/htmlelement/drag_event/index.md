@@ -10,6 +10,8 @@ browser-compat: api.HTMLElement.drag_event
 
 The `drag` event is fired every few hundred milliseconds as an element or text selection is being dragged by the user.
 
+This event is cancelable and may bubble up to the {{domxref("Document")}} and {{domxref("Window")}} objects.
+
 ## Syntax
 
 Use the event name in methods like {{domxref("EventTarget.addEventListener", "addEventListener()")}}, or set an event handler property.
@@ -43,7 +45,7 @@ _In addition to the properties listed below, properties from the parent interfac
 <div class="dropzone">
   <div id="draggable" draggable="true">This div is draggable</div>
 </div>
-<div class="dropzone" id="droptarget"></div>
+<div class="dropzone" id="drop-target"></div>
 ```
 
 #### CSS
@@ -100,7 +102,7 @@ source.addEventListener("dragend", (event) => {
 });
 
 /* events fired on the drop targets */
-const target = document.getElementById("droptarget");
+const target = document.getElementById("drop-target");
 target.addEventListener(
   "dragover",
   (event) => {
@@ -149,17 +151,9 @@ target.addEventListener("drop", (event) => {
 
 ## See also
 
-- Other drag and drop events:
-
-  - {{domxref("HTMLElement/dragstart_event", "dragstart")}}
-  - {{domxref("HTMLElement/dragend_event", "dragend")}}
-  - {{domxref("HTMLElement/dragover_event", "dragover")}}
-  - {{domxref("HTMLElement/dragenter_event", "dragenter")}}
-  - {{domxref("HTMLElement/dragleave_event", "dragleave")}}
-  - {{domxref("HTMLElement/drop_event", "drop")}}
-
-- This event on other targets:
-
-  - {{domxref("Window")}}: {{domxref("Window/drag_event", "drag")}} event
-  - {{domxref("Document")}}: {{domxref("Document/drag_event", "drag")}} event
-  - {{domxref("SVGElement")}}: {{domxref("SVGElement/drag_event", "drag")}} event
+- {{domxref("HTMLElement/dragstart_event", "dragstart")}}
+- {{domxref("HTMLElement/dragend_event", "dragend")}}
+- {{domxref("HTMLElement/dragover_event", "dragover")}}
+- {{domxref("HTMLElement/dragenter_event", "dragenter")}}
+- {{domxref("HTMLElement/dragleave_event", "dragleave")}}
+- {{domxref("HTMLElement/drop_event", "drop")}}

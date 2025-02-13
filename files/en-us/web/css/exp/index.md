@@ -22,7 +22,7 @@ width: calc(100px * exp(0)); /* 100px * 1 = 100px */
 width: calc(100px * exp(1)); /* 100px * 2.718281828459045 = 217px */
 ```
 
-### Parameter
+### Parameters
 
 The `exp(number)` function accepts only one value as its parameter.
 
@@ -38,7 +38,7 @@ Returns a non-negative {{CSSxRef("number")}} representing e<sup>number</sup>, wh
 - If `number` is `1`, the result is `e` (i.e. `2.718281828459045`).
 - If `number` is `Infinity`, the result is `Infinity`.
 
-### Formal syntax
+## Formal syntax
 
 {{CSSSyntax}}
 

@@ -1,5 +1,5 @@
 ---
-title: ":only-child"
+title: :only-child
 slug: Web/CSS/:only-child
 page-type: css-pseudo-class
 browser-compat: css.selectors.only-child
@@ -10,8 +10,6 @@ browser-compat: css.selectors.only-child
 The **`:only-child`** CSS [pseudo-class](/en-US/docs/Web/CSS/Pseudo-classes) represents an element without any siblings. This is the same as `:first-child:last-child` or `:nth-child(1):nth-last-child(1)`, but with a lower specificity.
 
 {{EmbedInteractiveExample("pages/tabbed/pseudo-class-only-child.html", "tabbed-shorter")}}
-
-> **Note:** As originally defined, the selected element had to have a parent. Beginning with Selectors Level 4, this is no longer required.
 
 ## Syntax
 

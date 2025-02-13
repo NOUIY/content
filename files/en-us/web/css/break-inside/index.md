@@ -48,7 +48,7 @@ Once forced breaks have been applied, soft breaks may be added if needed, but no
   - : Avoids any page break within the principal box.
 - `avoid-column`
   - : Avoids any column break within the principal box.
-- `avoid-region` {{experimental_inline}}
+- `avoid-region`
   - : Avoids any region break within the principal box.
 
 ## Page break aliases
@@ -176,5 +176,5 @@ article {
 
 ## See also
 
-- [Multiple-column Layout](/en-US/docs/Learn/CSS/CSS_layout/Multiple-column_Layout)
+- [Learn: Multiple-column Layout](/en-US/docs/Learn_web_development/Core/CSS_layout/Multiple-column_Layout)
 - [Breaking Boxes With CSS Fragmentation](https://www.smashingmagazine.com/2019/02/css-fragmentation/)

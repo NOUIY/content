@@ -9,7 +9,23 @@ browser-compat: javascript.operators.destructuring
 
 The **destructuring assignment** syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.
 
-{{EmbedInteractiveExample("pages/js/expressions-destructuringassignment.html", "taller")}}
+{{InteractiveExample("JavaScript Demo: Expressions - Destructuring assignment", "taller")}}
+
+```js interactive-example
+let a, b, rest;
+[a, b] = [10, 20];
+
+console.log(a);
+// Expected output: 10
+
+console.log(b);
+// Expected output: 20
+
+[a, b, ...rest] = [10, 20, 30, 40, 50];
+
+console.log(rest);
+// Expected output: Array [30, 40, 50]
+```
 
 ## Syntax
 
@@ -116,7 +132,8 @@ const obj = { a: 1, b: 2 };
 // The properties `a` and `b` are assigned to properties of `numbers`
 ```
 
-> **Note:** The parentheses `( ... )` around the assignment statement are required when using object literal destructuring assignment without a declaration.
+> [!NOTE]
+> The parentheses `( ... )` around the assignment statement are required when using object literal destructuring assignment without a declaration.
 >
 > `{ a, b } = { a: 1, b: 2 }` is not valid stand-alone syntax, as the `{ a, b }` on the left-hand side is considered a block and not an object literal according to the rules of [expression statements](/en-US/docs/Web/JavaScript/Reference/Statements/Expression_statement). However, `({ a, b } = { a: 1, b: 2 })` is valid, as is `const { a, b } = { a: 1, b: 2 }`.
 >
@@ -309,7 +326,7 @@ function parseProtocol(url) {
   // ["https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   // "https", "developer.mozilla.org", "en-US/docs/Web/JavaScript"]
 
-  const [, protocol, fullhost, fullpath] = parsedURL;
+  const [, protocol, fullHost, fullPath] = parsedURL;
   return protocol;
 }
 

@@ -2,7 +2,10 @@
 title: Popover API
 slug: Web/API/Popover_API
 page-type: web-api-overview
-browser-compat: api.HTMLElement.popover
+browser-compat:
+  - api.HTMLElement.popover
+  - api.HTMLElement.beforetoggle_event.popover_elements
+  - api.HTMLElement.toggle_event.popover_elements
 ---
 
 {{DefaultAPISidebar("Popover API")}}
@@ -16,7 +19,7 @@ A very common pattern on the web is to show content over the top of other conten
 - **modal**, meaning that while a popover is being shown, the rest of the page is rendered non-interactive until the popover is actioned in some way (for example an important choice is made).
 - **non-modal**, meaning that the rest of the page can be interacted with while the popover is being shown.
 
-Popovers which are created using the popover API are always non-modal. If you want to create a modal popover, a {{htmlelement("dialog")}} element is the right way to go, although bear in mind that `<dialog>` elements are not put in the {{glossary("top layer")}} by default — popovers are. There is significant overlap between the two — you might for example want to create a popover that persists, but control it using declarative HTML. You can even turn a `<dialog>` element into a popover if you want to combine popover control and top level placement with dialog semantics.
+Popovers created using the Popover API are always non-modal. If you want to create a modal popover, a {{htmlelement("dialog")}} element is the right way to go. There is significant overlap between the two — you might for example want to create a popover that persists, but control it using declarative HTML. You can turn a `<dialog>` element into a popover (`<dialog popover>` is perfectly valid) if you want to combine popover control with dialog semantics.
 
 Typical use cases for the popover API include user-interactive elements like action menus, custom "toast" notifications, form element suggestions, content pickers, or teaching UI.
 
@@ -78,10 +81,11 @@ See [Using the popover API](/en-US/docs/Web/API/Popover_API/Using) for a detaile
 
 ### Events
 
-- `HTMLElement` {{domxref("HTMLElement.beforetoggle_event", "beforetoggle")}} event
+- {{domxref("HTMLElement.beforetoggle_event","HTMLElement.beforetoggle")}} event
   - : Fired just before a popover element's state changes between showing and hidden, or vice versa.
-- `HTMLElement` {{domxref("HTMLElement.toggle_event", "toggle")}} event
-  - : Fired just after a popover element's state changes between showing and hidden, or vice versa. This event already existed to signal state changes on {{htmlelement("details")}} elements, and it seemed logical to extend it for popover elements.
+    Can be used to prevent a popover from opening, or to update other elements that need to be triggered by popover state.
+- {{domxref("HTMLElement.toggle_event", "HTMLElement.toggle")}} event
+  - : Fired just after a popover element's state changes between showing and hidden, or vice versa.
 
 ## Examples
 
@@ -94,3 +98,11 @@ See our [Popover API examples landing page](https://mdn.github.io/dom-examples/p
 ## Browser compatibility
 
 {{Compat}}
+
+## See also
+
+- [`popover`](/en-US/docs/Web/HTML/Global_attributes/popover) HTML global attribute
+- [`popovertarget`](/en-US/docs/Web/HTML/Element/button#popovertarget) HTML attribute
+- [`popovertargetaction`](/en-US/docs/Web/HTML/Element/button#popovertargetaction) HTML attribute
+- [`::backdrop`](/en-US/docs/Web/CSS/::backdrop) CSS pseudo-element
+- [`:popover-open`](/en-US/docs/Web/CSS/:popover-open) CSS pseudo-class

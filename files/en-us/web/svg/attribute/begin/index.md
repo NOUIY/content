@@ -9,7 +9,7 @@ spec-urls: https://svgwg.org/specs/animations/#BeginAttribute
 
 The **`begin`** attribute defines when an animation should begin.
 
-The attribute value is a semicolon separated list of values. The interpretation of a list of start times is detailed in the SMIL specification in ["Evaluation of begin and end time lists"](https://www.w3.org/TR/2001/REC-smil-animation-20010904/#Timing-EvaluationOfBeginEndTimeLists). Each individual value can be one of the following: `<offset-value>`, `<syncbase-value>`, `<event-value>`, `<repeat-value>`, `<accessKey-value>`, `<wallclock-sync-value>` or the keyword `indefinite`.
+The attribute value is a semicolon separated list of values. The interpretation of a list of start times is detailed in the SMIL specification in ["Evaluation of begin and end time lists"](https://www.w3.org/TR/smil-animation/#Timing-EvaluationOfBeginEndTimeLists). Each individual value can be one of the following: `<offset-value>`, `<syncbase-value>`, `<event-value>`, `<repeat-value>`, `<accessKey-value>`, `<wallclock-sync-value>` or the keyword `indefinite`.
 
 You can use this attribute with the following SVG elements:
 
@@ -71,8 +71,8 @@ The `<begin-value-list>` is a semicolon-separated list of values. Each value can
     - {{domxref("Element/mouseover_event", "mouseover")}}
     - {{domxref("Element/mouseup_event", "mouseup")}}
     - {{domxref("Element/wheel_event","wheel")}}
-    - {{domxref("HTMLElement/beforeinput_event", "beforeinput")}}
-    - {{domxref("HTMLElement/input_event", "input")}}
+    - {{domxref("Element/beforeinput_event", "beforeinput")}}
+    - {{domxref("Element/input_event", "input")}}
     - {{domxref("Element/keydown_event", "keydown")}}
     - {{domxref("Element/keyup_event", "keyup")}}
     - {{domxref("Element/compositionstart_event", "compositionstart")}}
@@ -412,3 +412,7 @@ _This example is embedded in an iFrame. If you want to activate the key events, 
 ## Specifications
 
 {{Specifications}}
+
+## See also
+
+- [SVG animation with SMIL](/en-US/docs/Web/SVG/SVG_animation_with_SMIL)

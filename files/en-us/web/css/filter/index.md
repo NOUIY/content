@@ -154,7 +154,7 @@ filter: contrast(175%) brightness(103%);
 
 ### Interpolation
 
-When animated, if both the beginning and end filters have a function list of the same length without {{cssxref("url","url()")}} in the same order, each of their filter functions is {{Glossary("interpolation", "interpolated")}} according to the filter function's specific rules.
+When animated, if both the beginning and end filters have a function list of the same length without {{cssxref("url_value", "&lt;url&gt;")}} in the same order, each of their filter functions is {{Glossary("interpolation", "interpolated")}} according to the filter function's specific rules.
 
 If the filter lists are of different lengths, the missing equivalent filter functions from the longer list are added to the end of the shorter list. The added functions use their initial, no filter modification values. All the filters listed are then interpolated according to the filter function's specific rules. Otherwise, discrete interpolation is used.
 
@@ -196,8 +196,8 @@ Filter functions are applied in order of appearance. The same filter function ca
 ```css
 #MDN-logo {
   border: 1px solid blue;
-  filter: drop-shadow(5px 5px 0 red) hue-rotate(180deg) drop-shadow(5px 5px 0
-        red);
+  filter: drop-shadow(5px 5px 0 red) hue-rotate(180deg)
+    drop-shadow(5px 5px 0 red);
 }
 ```
 
@@ -233,8 +233,9 @@ The filters are applied in order. This is why the drop shadows are not the same 
 
 ## See also
 
-- CSS {{cssxref("backdrop-filter")}} property
+- {{cssxref("backdrop-filter")}}
+- {{cssxref("mask")}}
+- SVG {{SVGAttr("filter")}} attribute
 - CSS [compositing and blending](/en-US/docs/Web/CSS/CSS_compositing_and_blending) module, including the CSS {{cssxref("background-blend-mode")}} and {{cssxref("mix-blend-mode")}} properties.
-- The CSS {{cssxref("mask")}} property
 - [SVG](/en-US/docs/Web/SVG), including the SVG {{SVGElement("filter")}} element and SVG {{SVGAttr("filter")}} attribute.
 - [Applying SVG effects to HTML content](/en-US/docs/Web/SVG/Applying_SVG_effects_to_HTML_content)

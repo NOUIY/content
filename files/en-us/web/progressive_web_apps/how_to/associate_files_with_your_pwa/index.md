@@ -12,14 +12,15 @@ Progressive Web Apps can participate in this feature, so when the user clicks on
 
 There are two parts to adding support for file handling:
 
-- Declare support for certain file types using the [`file_handlers`](/en-US/docs/Web/Manifest/file_handlers) web app manifest member.
+- Declare support for certain file types using the [`file_handlers`](/en-US/docs/Web/Manifest/Reference/file_handlers) web app manifest member.
 - Handling files using the {{domxref("LaunchQueue")}} interface.
 
-> **Note:** At present this feature is only available on Chromium-based browsers, and only on desktop operating systems.
+> [!NOTE]
+> At present this feature is only available on Chromium-based browsers, and only on desktop operating systems.
 
 ## Declaring support for file types
 
-To declare support for particular file types, include the [`file_handlers`](/en-US/docs/Web/Manifest/file_handlers) member in your [manifest file](/en-US/docs/Web/Manifest).
+To declare support for particular file types, include the [`file_handlers`](/en-US/docs/Web/Manifest/Reference/file_handlers) member in your [manifest file](/en-US/docs/Web/Manifest).
 
 The `file_handlers` member is an array of file handler objects. Each file handler object has two mandatory properties, `action` and `accept`.
 
@@ -94,9 +95,9 @@ Note that the code checks that `launchQueue` exists before using it, to ensure t
 
 ## See also
 
-- [`file_handlers`](/en-US/docs/Web/Manifest/file_handlers) manifest member
+- [`file_handlers`](/en-US/docs/Web/Manifest/Reference/file_handlers) manifest member
 - {{domxref("LaunchQueue")}} interface
 - [File System API](/en-US/docs/Web/API/File_System_API)
 - [File API](/en-US/docs/Web/API/File_API)
-- [Let installed web applications be file handlers](https://developer.chrome.com/articles/file-handling/) on web.dev (2022)
+- [Let installed web applications be file handlers](https://developer.chrome.com/docs/capabilities/web-apis/file-handling) on developer.chrome.com (2022)
 - [Handle files in Progressive Web Apps](https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/handle-files) on learn.microsoft.com (2023)

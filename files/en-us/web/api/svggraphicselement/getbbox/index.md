@@ -6,7 +6,7 @@ page-type: web-api-instance-method
 browser-compat: api.SVGGraphicsElement.getBBox
 ---
 
-{{APIRef}}
+{{APIRef("SVG")}}
 
 The **`SVGGraphicsElement.getBBox()`** method allows us to determine
 the coordinates of the smallest rectangle in which the object fits. The coordinates
@@ -50,7 +50,7 @@ getBBox(options)
 
 ### Return value
 
-The returned value is a {{domxref("SVGRect")}} object, which defines the bounding box.
+The returned value is an {{domxref("SVGRect")}} object, which defines the bounding box.
 This value is irrespective of any transformation attribute applied to it or the parent
 elements.
 

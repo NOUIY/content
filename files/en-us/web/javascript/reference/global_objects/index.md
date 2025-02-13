@@ -74,6 +74,7 @@ These are the base objects representing numbers, dates, and mathematical calcula
 - {{jsxref("BigInt")}}
 - {{jsxref("Math")}}
 - {{jsxref("Date")}}
+- {{jsxref("Temporal")}}
 
 ### Text processing
 
@@ -96,6 +97,7 @@ These objects represent collections of data which are ordered by an index value.
 - {{jsxref("Uint32Array")}}
 - {{jsxref("BigInt64Array")}}
 - {{jsxref("BigUint64Array")}}
+- {{jsxref("Float16Array")}}
 - {{jsxref("Float32Array")}}
 - {{jsxref("Float64Array")}}
 
