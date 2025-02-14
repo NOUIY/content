@@ -1,5 +1,5 @@
 ---
-title: ":host"
+title: :host
 slug: Web/CSS/:host
 page-type: css-pseudo-class
 browser-compat: css.selectors.host
@@ -9,7 +9,8 @@ browser-compat: css.selectors.host
 
 The **`:host`** [CSS](/en-US/docs/Web/CSS) [pseudo-class](/en-US/docs/Web/CSS/Pseudo-classes) selects the shadow host of the [shadow DOM](/en-US/docs/Web/API/Web_components/Using_shadow_DOM) containing the CSS it is used inside — in other words, this allows you to select a custom element from inside its shadow DOM.
 
-> **Note:** This has no effect when used outside a shadow DOM.
+> [!NOTE]
+> This has no effect when used outside a shadow DOM.
 
 {{EmbedInteractiveExample("pages/tabbed/pseudo-class-host.html", "tabbed-shorter")}}
 
@@ -34,7 +35,7 @@ The **`:host`** [CSS](/en-US/docs/Web/CSS) [pseudo-class](/en-US/docs/Web/CSS/Ps
 
 The following snippets are taken from our [host-selectors example](https://github.com/mdn/web-components-examples/tree/main/host-selectors) ([see it live also](https://mdn.github.io/web-components-examples/host-selectors/)).
 
-In this example we have a simple custom element — `<context-span>` — that you can wrap around text:
+In this example we have a basic custom element — `<context-span>` — that you can wrap around text:
 
 ```html
 <h1>
@@ -59,10 +60,10 @@ style.textContent =
   ':host-context(h1):after { content: " - no links in headers!" }' +
   ":host-context(article, aside) { color: gray; }" +
   ":host(.footer) { color : red; }" +
-  ":host { background: rgba(0,0,0,0.1); padding: 2px 5px; }";
+  ":host { background: rgb(0 0 0 / 10%); padding: 2px 5px; }";
 ```
 
-The `:host { background: rgba(0,0,0,0.1); padding: 2px 5px; }` rule styles all instances of the `<context-span>` element (the shadow host in this instance) in the document.
+The `:host { background: rgb(0 0 0 / 10%); padding: 2px 5px; }` rule styles all instances of the `<context-span>` element (the shadow host in this instance) in the document.
 
 ## Specifications
 
@@ -77,5 +78,6 @@ The `:host { background: rgba(0,0,0,0.1); padding: 2px 5px; }` rule styles all i
 - [Web components](/en-US/docs/Web/API/Web_components)
 - {{cssxref(":host_function", ":host()")}}
 - {{cssxref(":host-context", ":host-context()")}}
-- {{CSSXref("::slotted")}}
+- {{CSSxref("::slotted")}}
+- {{CSSxRef(":state",":state()")}}
 - [CSS scoping](/en-US/docs/Web/CSS/CSS_scoping) module

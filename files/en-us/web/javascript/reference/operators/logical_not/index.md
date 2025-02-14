@@ -12,7 +12,15 @@ falsity and vice versa. It is typically used with boolean (logical)
 values. When used with non-Boolean values, it returns `false` if its single
 operand can be converted to `true`; otherwise, returns `true`.
 
-{{EmbedInteractiveExample("pages/js/expressions-logical-not.html", "shorter")}}
+{{InteractiveExample("JavaScript Demo: Expressions - Logical NOT", "shorter")}}
+
+```js interactive-example
+const a = 3;
+const b = -2;
+
+console.log(!(a > 0 || b > 0));
+// Expected output: false
+```
 
 ## Syntax
 
@@ -56,7 +64,7 @@ The following code shows examples of the `!` (logical NOT) operator.
 
 It is possible to use a couple of NOT operators in series to explicitly force the
 conversion of any value to the corresponding [boolean primitive](/en-US/docs/Web/JavaScript/Data_structures#boolean_type).
-The conversion is based on the "truthyness" or "falsyness" of the value (see
+The conversion is based on the "truthiness" or "falsiness" of the value (see
 {{Glossary("truthy")}} and {{Glossary("falsy")}}).
 
 The same conversion can be done through the {{jsxref("Boolean/Boolean", "Boolean()")}} function.

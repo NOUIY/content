@@ -11,7 +11,17 @@ The **`some()`** method of {{jsxref("Array")}} instances tests whether
 at least one element in the array passes the test implemented by the provided
 function. It returns true if, in the array, it finds an element for which the provided function returns true; otherwise it returns false. It doesn't modify the array.
 
-{{EmbedInteractiveExample("pages/js/array-some.html")}}
+{{InteractiveExample("JavaScript Demo: Array.some()")}}
+
+```js interactive-example
+const array = [1, 2, 3, 4, 5];
+
+// Checks whether an element is even
+const even = (element) => element % 2 === 0;
+
+console.log(array.some(even));
+// Expected output: true
+```
 
 ## Syntax
 
@@ -39,7 +49,7 @@ some(callbackFn, thisArg)
 
 ## Description
 
-The `some()` method is an [iterative method](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#iterative_methods). It calls a provided `callbackFn` function once for each element in an array, until the `callbackFn` returns a [truthy](/en-US/docs/Glossary/Truthy) value. If such an element is found, `some()` immediately returns `true` and stops iterating through the array. Otherwise, if `callbackFn` returns a [falsy](/en-US/docs/Glossary/Falsy) value for all elements, `some()` returns `false`.
+The `some()` method is an [iterative method](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#iterative_methods). It calls a provided `callbackFn` function once for each element in an array, until the `callbackFn` returns a [truthy](/en-US/docs/Glossary/Truthy) value. If such an element is found, `some()` immediately returns `true` and stops iterating through the array. Otherwise, if `callbackFn` returns a [falsy](/en-US/docs/Glossary/Falsy) value for all elements, `some()` returns `false`. Read the [iterative methods](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#iterative_methods) section for more information about how these methods work in general.
 
 `some()` acts like the "there exists" quantifier in mathematics. In particular, for an empty array, it returns `false` for any condition.
 
@@ -51,7 +61,8 @@ The `some()` method is an [iterative method](/en-US/docs/Web/JavaScript/Referenc
 - Changes to already-visited indexes do not cause `callbackFn` to be invoked on them again.
 - If an existing, yet-unvisited element of the array is changed by `callbackFn`, its value passed to the `callbackFn` will be the value at the time that element gets visited. [Deleted](/en-US/docs/Web/JavaScript/Reference/Operators/delete) elements are not visited.
 
-> **Warning:** Concurrent modifications of the kind described above frequently lead to hard-to-understand code and are generally to be avoided (except in special cases).
+> [!WARNING]
+> Concurrent modifications of the kind described above frequently lead to hard-to-understand code and are generally to be avoided (except in special cases).
 
 The `some()` method is [generic](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#generic_array_methods). It only expects the `this` value to have a `length` property and integer-keyed properties.
 
@@ -91,7 +102,7 @@ function checkAvailability(arr, val) {
   return arr.some((arrVal) => val === arrVal);
 }
 
-checkAvailability(fruits, "kela"); // false
+checkAvailability(fruits, "grapefruit"); // false
 checkAvailability(fruits, "banana"); // true
 ```
 
@@ -112,6 +123,23 @@ getBoolean(false); // false
 getBoolean("false"); // false
 getBoolean(1); // true
 getBoolean("true"); // true
+```
+
+### Using the third argument of callbackFn
+
+The `array` argument is useful if you want to access another element in the array, especially when you don't have an existing variable that refers to the array. The following example first uses `filter()` to extract the positive values and then uses `some()` to check whether the array is strictly increasing.
+
+```js
+const numbers = [3, -1, 1, 4, 1, 5];
+const isIncreasing = !numbers
+  .filter((num) => num > 0)
+  .some((num, idx, arr) => {
+    // Without the arr argument, there's no way to easily access the
+    // intermediate array without saving it to a variable.
+    if (idx === 0) return false;
+    return num <= arr[idx - 1];
+  });
+console.log(isIncreasing); // false
 ```
 
 ### Using some() on sparse arrays

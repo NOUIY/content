@@ -7,24 +7,28 @@ browser-compat: html.elements.pre
 
 {{HTMLSidebar}}
 
-The **`<pre>`** [HTML](/en-US/docs/Web/HTML) element represents preformatted text which is to be presented exactly as written in the HTML file. The text is typically rendered using a non-proportional, or [monospaced](https://en.wikipedia.org/wiki/Monospaced_font), font. Whitespace inside this element is displayed as written.
+The **`<pre>`** [HTML](/en-US/docs/Web/HTML) element represents preformatted text which is to be presented exactly as written in the HTML file. The text is typically rendered using a non-proportional, or [monospaced](https://en.wikipedia.org/wiki/Monospaced_font) font.
+
+Whitespace inside this element is displayed as written, with one exception. If one or more leading newline characters are included immediately following the opening `<pre>` tag, the _first_ newline character is stripped.
+
+`<pre>` elements' text content is parsed as HTML, so if you want to ensure that your text content stays as plain text, some syntax characters, such as `<`, may need to be escaped using their respective {{glossary("character reference", "character references")}}. See [escaping ambiguous characters](#escaping_ambiguous_characters) for more information.
+
+`<pre>` elements commonly contain {{HTMLElement("code")}}, {{HTMLElement("samp")}}, and {{HTMLElement("kbd")}} elements, to represent computer code, computer output, and user input, respectively.
+
+By default, `<pre>` is a [block-level](/en-US/docs/Glossary/Block-level_content) element, i.e. its default {{cssxref("display")}} value is `block`.
 
 {{EmbedInteractiveExample("pages/tabbed/pre.html", "tabbed-standard")}}
-
-If you have to display reserved characters such as `<`, `>`, `&`, and `"` within the `<pre>` tag, the characters must be escaped using their respective [HTML entity](/en-US/docs/Glossary/Entity).
 
 ## Attributes
 
 This element only includes the [global attributes](/en-US/docs/Web/HTML/Global_attributes).
 
-- `cols` {{non-standard_inline}} {{deprecated_inline}}
-  - : Contains the _preferred_ count of characters that a line should have. It was a non-standard synonym of [`width`](#width). To achieve such an effect, use CSS {{Cssxref("width")}} instead.
 - `width` {{deprecated_inline}} {{Non-standard_Inline}}
   - : Contains the _preferred_ count of characters that a line should have. Though technically still implemented, this attribute has no visual effect; to achieve such an effect, use CSS {{Cssxref("width")}} instead.
 - `wrap` {{non-standard_inline}} {{Deprecated_Inline}}
   - : Is a _hint_ indicating how the overflow must happen. In modern browser this hint is ignored and no visual effect results in its present; to achieve such an effect, use CSS {{Cssxref("white-space")}} instead.
 
-## Accessibility concerns
+## Accessibility
 
 It is important to provide an alternate description for any images or diagrams created using preformatted text. The alternate description should clearly and concisely describe the image or diagram's content.
 
@@ -64,28 +68,38 @@ A combination of the {{HTMLElement("figure")}} and {{HTMLElement("figcaption")}}
 
 ```html
 <p>Using CSS to change the font color is easy.</p>
-<pre>
+<pre><code>
 body {
   color: red;
 }
-</pre>
+</code></pre>
 ```
 
 #### Result
 
 {{EmbedLiveSample("Basic_example")}}
 
-### Escaping reserved characters
+### Escaping ambiguous characters
+
+Suppose you want to demonstrate HTML code in a `<pre>` element. The character sequences that define valid HTML tags (starting with `<` and ending with `>`) will not be displayed. To display the tag characters as text, you need to escape (at least) the `<` character using its character reference, so that the sequences no longer define valid tags.
+
+In reality, the HTML parser treats most characters as plain text unless in specific contexts. For example, `< code` is fine, but `<code` would be misparsed; `&am;` is fine, but `&amp;` is not. However, it's a good practice to escape all ambiguous characters to avoid any confusion, especially if you are programmatically generating HTML and injecting the `<pre>` content. In this case, here's a good rule of thumb for how to escape characters:
+
+1. First, write the content out, as you would like it to appear in the HTML document.
+2. Replace any ampersands (`&`) with `&amp;`. Do this step first, so that new `&` characters generated in the next step don't get escaped.
+3. Replace any `<` characters with `&lt;`.
+
+This should result in the content being displayed as you intended. The replacement of other HTML syntax characters is optional (like `>` to `&gt;`, `"` to `&quot;`, and `'` to `&apos;`), but will do no harm.
 
 #### HTML
 
 ```html
-<pre>
+<pre><code>
 let i = 5;
 
 if (i &lt; 10 &amp;&amp; i &gt; 0)
   return &quot;Single Digit Number&quot;
-</pre>
+</code></pre>
 ```
 
 #### Result
@@ -118,7 +132,7 @@ if (i &lt; 10 &amp;&amp; i &gt; 0)
     </tr>
     <tr>
       <th scope="row">Tag omission</th>
-      <td>{{no_tag_omission}}</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
     </tr>
     <tr>
       <th scope="row">Permitted parents</th>
@@ -161,5 +175,5 @@ if (i &lt; 10 &amp;&amp; i &gt; 0)
 ## See also
 
 - CSS: {{Cssxref('white-space')}}, {{Cssxref('word-break')}}
-- [HTML Entity](/en-US/docs/Glossary/Entity)
-- Related element: {{HTMLElement("code")}}
+- {{glossary("Character reference")}}
+- Related element: {{HTMLElement("code")}}, {{HTMLElement("samp")}}, {{HTMLElement("kbd")}}

@@ -1,5 +1,5 @@
 ---
-title: "::placeholder"
+title: ::placeholder
 slug: Web/CSS/::placeholder
 page-type: css-pseudo-element
 browser-compat: css.selectors.placeholder
@@ -13,7 +13,8 @@ The **`::placeholder`** [CSS](/en-US/docs/Web/CSS) [pseudo-element](/en-US/docs/
 
 Only the subset of CSS properties that apply to the {{cssxref("::first-line")}} pseudo-element can be used in a rule using `::placeholder` in its selector.
 
-> **Note:** In most browsers, the appearance of placeholder text is a translucent or light gray color by default.
+> [!NOTE]
+> In most browsers, the appearance of placeholder text is a translucent or light gray color by default.
 
 ## Syntax
 
@@ -23,7 +24,7 @@ Only the subset of CSS properties that apply to the {{cssxref("::first-line")}} 
 }
 ```
 
-## Accessibility concerns
+## Accessibility
 
 ### Color contrast
 
@@ -61,11 +62,11 @@ With this implementation, the hint content is available even if information is e
 
 ### Windows High Contrast Mode
 
-Placeholder text will appear with the same styling as user-entered text content when rendered in [Windows High Contrast Mode](https://www.smashingmagazine.com/2022/06/guide-windows-high-contrast-mode/)). This will make it difficult for some people to determine which content has been entered, and which content is placeholder text.
+Placeholder text will appear with the same styling as user-entered text content when rendered in [Windows High Contrast Mode](https://www.smashingmagazine.com/2022/06/guide-windows-high-contrast-mode/). This will make it difficult for some people to determine which content has been entered, and which content is placeholder text.
 
 ### Labels
 
-Placeholders are not a replacement for the {{htmlelement("label")}} element. Without a label that has been programmatically associated with an input using a combination of the [`for`](/en-US/docs/Web/HTML/Element/label#for) and [`id`](/en-US/docs/Web/HTML/Global_attributes#id) attributes, assistive technology such as screen readers cannot parse {{htmlelement("input")}} elements.
+Placeholders are not a replacement for the {{htmlelement("label")}} element. Without a label that has been programmatically associated with an input using a combination of the [`for`](/en-US/docs/Web/HTML/Element/label#for) and [`id`](/en-US/docs/Web/HTML/Global_attributes/id) attributes, assistive technology such as screen readers cannot parse {{htmlelement("input")}} elements.
 
 - [Placeholders in Form Fields Are Harmful — Nielsen Norman Group](https://www.nngroup.com/articles/form-design-placeholders/)
 
@@ -88,6 +89,7 @@ input::placeholder {
   color: red;
   font-size: 1.2em;
   font-style: italic;
+  opacity: 0.5;
 }
 ```
 
@@ -97,30 +99,41 @@ input::placeholder {
 
 ### Opaque text
 
-Some browsers (such as Firefox) set the default {{cssxref("opacity")}} of placeholders to something less than 100%. If you want fully opaque placeholder text, set `opacity` to `1`.
+Some browsers make placeholder text less opaque. If you want fully opaque text, then set the {{CSSXref("color")}} property value explicitly. The [`currentColor`](/en-US/docs/Web/CSS/color_value#currentcolor_keyword) value can be used to have the same color as the corresponding input element.
 
 #### HTML
 
 ```html
-<input placeholder="Default opacity" />
-<input placeholder="Full opacity" class="force-opaque" />
+<input placeholder="Color set by browser" />
+<input placeholder="Same color as input" class="explicit-color" />
+<input placeholder="Semi-opaque text color" class="opacity-change" />
 ```
 
 #### CSS
 
 ```css
-::placeholder {
+input {
+  font-weight: bold;
   color: green;
 }
 
-.force-opaque::placeholder {
-  opacity: 1;
+.explicit-color::placeholder {
+  /* use the same color as input element to avoid the browser set default color */
+  color: currentColor;
+}
+
+.opacity-change::placeholder {
+  /* less opaque text */
+  color: color-mix(in srgb, currentColor 70%, transparent);
 }
 ```
 
 #### Result
 
-{{EmbedLiveSample("Opaque_text", 200, 60)}}
+{{EmbedLiveSample("default_color", 200, 60)}}
+
+> [!NOTE]
+> Note that browsers use different default colors for placeholder text. For example, Firefox uses the input element's color with 54% opacity, and Chrome uses `darkgray` color. If you want consistent placeholder text color across the browsers, then set the `color` explicitly.
 
 ## Specifications
 
@@ -134,4 +147,4 @@ Some browsers (such as Firefox) set the default {{cssxref("opacity")}} of placeh
 
 - The {{cssxref(":placeholder-shown")}} pseudo-class styles an element that _has_ an active placeholder.
 - Related HTML elements: {{HTMLElement("input")}}, {{HTMLElement("textarea")}}
-- [HTML forms](/en-US/docs/Learn/Forms)
+- [HTML forms](/en-US/docs/Learn_web_development/Extensions/Forms)

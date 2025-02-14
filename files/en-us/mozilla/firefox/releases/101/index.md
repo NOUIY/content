@@ -35,7 +35,7 @@ No notable changes.
 
 - [`HTMLInputElement.showPicker()`](/en-US/docs/Web/API/HTMLInputElement/showPicker) is now supported, allowing the picker for an input element to be displayed when a user interacts with some other element, such as a button ([Firefox bug 1745005](https://bugzil.la/1745005)).
 
-- [`DOMException`](/en-US/docs/Web/API/DOMException) is now a {{Glossary("serializable object")}}, so it can be cloned with {{domxref("structuredClone()")}} or copied between [workers](/en-US/docs/Web/API/Worker) using {{domxref("Worker.postMessage()", "postMessage()")}} ([Firefox bug 1561357](https://bugzil.la/1561357)).
+- [`DOMException`](/en-US/docs/Web/API/DOMException) is now a {{Glossary("serializable object")}}, so it can be cloned with {{DOMxRef("Window.structuredClone", "structuredClone()")}} or copied between [workers](/en-US/docs/Web/API/Worker) using {{domxref("Worker.postMessage()", "postMessage()")}} ([Firefox bug 1561357](https://bugzil.la/1561357)).
 
 - _Constructable stylesheets_ are now supported, making it much easier to create reusable stylesheets for use with [Shadow DOM](/en-US/docs/Web/API/Web_components/Using_shadow_DOM).
   The update includes the addition of a [`CSSStyleSheet()` constructor](/en-US/docs/Web/API/CSSStyleSheet/CSSStyleSheet) for creating new stylesheets, the {{domxref("CSSStyleSheet.replace()")}} and {{domxref("CSSStyleSheet.replaceSync()")}} methods that can be used to add/replace CSS rules in the sheet, and the [`Document.adoptedStyleSheets`](/en-US/docs/Web/API/Document/adoptedStyleSheets) and [`ShadowRoot.adoptedStyleSheets`](/en-US/docs/Web/API/ShadowRoot/adoptedStyleSheets) properties that are used to share sheets to a document and its shadow DOM subtrees.
@@ -43,12 +43,12 @@ No notable changes.
 
 #### Media, WebRTC, and Web Audio
 
-- [AV1 codec parameters](/en-US/docs/Web/Media/Formats/codecs_parameter#av1) are now properly parsed in media support queries.
+- [AV1 codec parameters](/en-US/docs/Web/Media/Guides/Formats/codecs_parameter#av1) are now properly parsed in media support queries.
   This means that [`MediaCapabilities.decodingInfo()`](/en-US/docs/Web/API/MediaCapabilities/decodingInfo), [`HTMLMediaElement.canPlayType()`](/en-US/docs/Web/API/HTMLMediaElement/canPlayType), and [`MediaSource.isTypeSupported()`](/en-US/docs/Web/API/MediaSource/isTypeSupported_static) will now accurately report support for playback for AV1 sources based on the provided codec parameters.
   [`MediaCapabilities.decodingInfo()`](/en-US/docs/Web/API/MediaCapabilities/decodingInfo) will also use the information to accurately report on "efficient decoding" of AV1 videos.
   For more information, see [Firefox bug 1757861](https://bugzil.la/1757861).
 
-- [`RTCRtpEncodingParameters.maxFramerate`](/en-US/docs/Web/API/RTCRtpEncodingParameters/maxFramerate) is now supported for setting the maximum framerate that can be used to send an encoding (in {{domxref("RTCPeerConnection.addTransceiver()")}} and {{domxref("RTCRtpSender.setParameters()")}}).
+- `maxFramerate` is now supported for setting the maximum framerate that can be used to send an encoding (in {{domxref("RTCPeerConnection.addTransceiver()")}} and {{domxref("RTCRtpSender.setParameters()")}}).
   Note that zero if a valid frame rate value, but is interpreted by Firefox as "no frame rate limit".
   For more information, see [Firefox bug 1611957](https://bugzil.la/1611957).
 
@@ -85,4 +85,4 @@ For more information, see the [full bug list](https://bugzilla.mozilla.org/bugli
 
 ## Older versions
 
-{{Firefox_for_developers(100)}}
+{{Firefox_for_developers}}

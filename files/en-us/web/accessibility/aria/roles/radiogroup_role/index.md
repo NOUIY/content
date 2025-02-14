@@ -4,8 +4,10 @@ slug: Web/Accessibility/ARIA/Roles/radiogroup_role
 page-type: aria-role
 spec-urls:
   - https://w3c.github.io/aria/#radiogroup
-  - https://w3c.github.io/aria-practices/#radiobutton
+  - https://www.w3.org/WAI/ARIA/apg/patterns/radio/examples/radio/
 ---
+
+{{AccessibilitySidebar}}
 
 The `radiogroup` role is a group of `radio` buttons.
 
@@ -141,7 +143,7 @@ In this {{HTMLElement('fieldset')}} example, while `role="radiogroup"` is not ne
 
 {{Specifications}}
 
-## See Also
+## See also
 
 - HTML {{HTMLElement('fieldset')}} element
 - HTML {{HTMLElement('input/radio', '&lt;input type="radio">')}} radio button element
@@ -150,11 +152,3 @@ In this {{HTMLElement('fieldset')}} example, while `role="radiogroup"` is not ne
 - [`aria-invalid`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-invalid)
 - [`aria-readonly`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-readonly)
 - [`aria-required`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-required)
-
-<section id="Quick_links">
-
-1. [**WAI-ARIA roles**](/en-US/docs/Web/Accessibility/ARIA/Roles)
-
-   {{ListSubpagesForSidebar("/en-US/docs/Web/Accessibility/ARIA/Roles")}}
-
-</section>

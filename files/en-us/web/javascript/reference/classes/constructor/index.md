@@ -9,9 +9,23 @@ browser-compat: javascript.classes.constructor
 
 The **`constructor`** method is a special method of a [class](/en-US/docs/Web/JavaScript/Reference/Classes) for creating and initializing an object instance of that class.
 
-> **Note:** This page introduces the `constructor` syntax. For the `constructor` property present on all objects, see {{jsxref("Object.prototype.constructor")}}.
+> [!NOTE]
+> This page introduces the `constructor` syntax. For the `constructor` property present on all objects, see {{jsxref("Object.prototype.constructor")}}.
 
-{{EmbedInteractiveExample("pages/js/classes-constructor.html")}}
+{{InteractiveExample("JavaScript Demo: Classes Constructor")}}
+
+```js interactive-example
+class Polygon {
+  constructor() {
+    this.name = "Polygon";
+  }
+}
+
+const poly1 = new Polygon();
+
+console.log(poly1.name);
+// Expected output: "Polygon"
+```
 
 ## Syntax
 
@@ -62,7 +76,8 @@ constructor(...args) {
 }
 ```
 
-> **Note:** The difference between an explicit constructor like the one above and the default constructor is that the latter doesn't actually invoke [the array iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/@@iterator) through [argument spreading](/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax).
+> [!NOTE]
+> The difference between an explicit constructor like the one above and the default constructor is that the latter doesn't actually invoke [the array iterator](/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Symbol.iterator) through [argument spreading](/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax).
 
 That enables code like this to work:
 
@@ -183,7 +198,7 @@ const person = new Person();
 person.introduce(); // Hello, my name is Anonymous
 ```
 
-The constructor must be a literal name. Computed properties cannot become constructors.
+The constructor must be a literal name. [Computed properties](/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#computed_property_names) cannot become constructors.
 
 ```js
 class Foo {

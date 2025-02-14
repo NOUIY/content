@@ -10,7 +10,21 @@ browser-compat: javascript.builtins.Array.push
 The **`push()`** method of {{jsxref("Array")}} instances adds the specified elements to the end of
 an array and returns the new length of the array.
 
-{{EmbedInteractiveExample("pages/js/array-push.html")}}
+{{InteractiveExample("JavaScript Demo: Array.push()")}}
+
+```js interactive-example
+const animals = ["pigs", "goats", "sheep"];
+
+const count = animals.push("cows");
+console.log(count);
+// Expected output: 4
+console.log(animals);
+// Expected output: Array ["pigs", "goats", "sheep", "cows"]
+
+animals.push("chickens", "cats", "dogs");
+console.log(animals);
+// Expected output: Array ["pigs", "goats", "sheep", "cows", "chickens", "cats", "dogs"]
+```
 
 ## Syntax
 
@@ -58,7 +72,7 @@ console.log(total); // 4
 
 ### Merging two arrays
 
-This example uses {{jsxref("Operators/Spread_syntax", "spread syntax", "", "1")}} to push all elements from a
+This example uses {{jsxref("Operators/Spread_syntax", "spread syntax", "", 1)}} to push all elements from a
 second array into the first one.
 
 ```js

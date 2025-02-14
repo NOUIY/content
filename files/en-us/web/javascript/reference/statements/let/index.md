@@ -9,7 +9,21 @@ browser-compat: javascript.statements.let
 
 The **`let`** declaration declares re-assignable, block-scoped local variables, optionally initializing each to a value.
 
-{{EmbedInteractiveExample("pages/js/statement-let.html")}}
+{{InteractiveExample("JavaScript Demo: Statement - Let")}}
+
+```js interactive-example
+let x = 1;
+
+if (x === 1) {
+  let x = 2;
+
+  console.log(x);
+  // Expected output: 2
+}
+
+console.log(x);
+// Expected output: 1
+```
 
 ## Syntax
 
@@ -39,7 +53,10 @@ The scope of a variable declared with `let` is one of the following curly-brace-
 - Function body
 - [Static initialization block](/en-US/docs/Web/JavaScript/Reference/Classes/Static_initialization_blocks)
 
-Or the current module or script, if it's contained in none of these.
+Or if none of the above applies:
+
+- The current [module](/en-US/docs/Web/JavaScript/Guide/Modules), for code running in module mode
+- The global scope, for code running in script mode.
 
 Compared with {{jsxref("Statements/var", "var")}}, `let` declarations have the following differences:
 
@@ -91,11 +108,13 @@ The term "temporal" is used because the zone depends on the order of execution (
 }
 ```
 
-Using the `typeof` operator for a `let` variable in its TDZ will throw a {{jsxref("ReferenceError")}}:
+Using the `typeof` operator for a variable in its TDZ will throw a {{jsxref("ReferenceError")}}:
 
 ```js example-bad
-typeof i; // ReferenceError: Cannot access 'i' before initialization
-let i = 10;
+{
+  typeof i; // ReferenceError: Cannot access 'i' before initialization
+  let i = 10;
+}
 ```
 
 This differs from using `typeof` for undeclared variables, and variables that hold a value of `undefined`:
@@ -103,6 +122,8 @@ This differs from using `typeof` for undeclared variables, and variables that ho
 ```js
 console.log(typeof undeclaredVariable); // "undefined"
 ```
+
+> **Note:** `let` and `const` declarations are only processed when the current script gets processed. If you have two `<script>` elements running in script mode within one HTML, the first script is not subject to the TDZ restrictions for top-level `let` or `const` variables declared in the second script, although if you declare a `let` or `const` variable in the first script, declaring it again in the second script will cause a [redeclaration error](#redeclarations).
 
 ### Redeclarations
 

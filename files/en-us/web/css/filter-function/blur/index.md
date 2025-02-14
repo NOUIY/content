@@ -49,8 +49,12 @@ The following declarations produce the same effect:
 ```css
 filter: blur(1.1px);
 filter: url(#blur11); /* with embedded SVG */
-filter: url(folder/fileName.svg#blurr11); /* external svg filter definition */
+filter: url(folder/fileName.svg#blur11); /* external svg filter definition */
 ```
+
+## Formal syntax
+
+{{CSSSyntax}}
 
 ## Examples
 
@@ -67,7 +71,10 @@ This example shows three images: the image with a `blur()` filter function appli
   <filter id="blur">
     <feGaussianBlur stdDeviation="3.5" edgeMode="duplicate" />
   </filter>
-  <image xlink:href="flag.jpg" filter="url(#blur)" />
+  <image
+    href="https://mdn.github.io/shared-assets/images/examples/progress-pride-flag.jpg"
+    xlink:href="https://mdn.github.io/shared-assets/images/examples/progress-pride-flag.jpg"
+    filter="url(#blur)" />
 </svg>
 ```
 
@@ -89,18 +96,26 @@ svg:not([height]) {
   <tbody>
     <tr>
       <td>
-        <img class="filter" src="flag.jpg" alt="Pride flag" />
+        <img
+          class="filter"
+          src="https://mdn.github.io/shared-assets/images/examples/progress-pride-flag.jpg"
+          alt="Pride flag" />
       </td>
       <td>
         <svg id="svg" height="220" width="220" style="overflow: visible">
           <filter id="svgBlur">
             <feGaussianBlur stdDeviation="3.5" />
           </filter>
-          <image xlink:href="flag.jpg" filter="url(#svgBlur)" />
+          <image
+            href="https://mdn.github.io/shared-assets/images/examples/progress-pride-flag.jpg"
+            xlink:href="https://mdn.github.io/shared-assets/images/examples/progress-pride-flag.jpg"
+            filter="url(#svgBlur)" />
         </svg>
       </td>
       <td>
-        <img src="flag.jpg" alt="Pride flag" />
+        <img
+          src="https://mdn.github.io/shared-assets/images/examples/progress-pride-flag.jpg"
+          alt="Pride flag" />
       </td>
     </tr>
   </tbody>

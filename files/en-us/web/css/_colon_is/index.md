@@ -1,5 +1,5 @@
 ---
-title: ":is()"
+title: :is()
 slug: Web/CSS/:is
 page-type: css-pseudo-class
 browser-compat: css.selectors.is
@@ -9,11 +9,20 @@ browser-compat: css.selectors.is
 
 The **`:is()`** [CSS](/en-US/docs/Web/CSS) [pseudo-class](/en-US/docs/Web/CSS/Pseudo-classes) function takes a selector list as its argument, and selects any element that can be selected by one of the selectors in that list. This is useful for writing large selectors in a more compact form.
 
-> **Note:** Originally named `:matches()` (and `:any()`), this selector was renamed to `:is()` in [CSSWG issue #3258](https://github.com/w3c/csswg-drafts/issues/3258).
+> [!NOTE]
+> Originally named `:matches()` (and `:any()`), this selector was renamed to `:is()` in [CSSWG issue #3258](https://github.com/w3c/csswg-drafts/issues/3258).
 
 {{EmbedInteractiveExample("pages/tabbed/pseudo-class-is.html", "tabbed-shorter")}}
 
-Pseudo-elements are not valid in the selector list for `:is()`.
+## Syntax
+
+The `:is()` pseudo-class requires a [selector list](/en-US/docs/Web/CSS/CSS_selectors/Selector_structure#selector_list), a comma-separated list of one or more selectors as its argument. The list must not contain a [pseudo-element](/en-US/docs/Web/CSS/Pseudo-elements), but any other simple, compound, and complex selectors are allowed.
+
+```css-nolint
+:is(<forgiving-selector-list>) {
+  /* ... */
+}
+```
 
 ### Difference between :is() and :where()
 
@@ -206,14 +215,6 @@ some-element::after {
 }
 ```
 
-## Syntax
-
-```css-nolint
-:is(<forgiving-selector-list>) {
-  /* ... */
-}
-```
-
 ## Specifications
 
 {{Specifications}}
@@ -224,6 +225,6 @@ some-element::after {
 
 ## See also
 
-- {{CSSxRef(":where", ":where()")}} - Like `:is()`, but with 0 [specificity](/en-US/docs/Web/CSS/Specificity).
+- {{CSSxRef(":where", ":where()")}} - Like `:is()`, but with 0 [specificity](/en-US/docs/Web/CSS/CSS_cascade/Specificity).
 - [Selector list](/en-US/docs/Web/CSS/Selector_list)
 - [Web components](/en-US/docs/Web/API/Web_components)

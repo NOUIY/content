@@ -1,10 +1,10 @@
 ---
-title: How to write an entry in the glossary
+title: How to add a glossary entry
+short-title: Add a glossary entry
 slug: MDN/Writing_guidelines/Howto/Write_a_new_entry_in_the_glossary
 page-type: mdn-writing-guide
+sidebar: mdnsidebar
 ---
-
-{{MDNSidebar}}
 
 This article explains how to add and link to entries in the [MDN Web Docs glossary](/en-US/docs/Glossary).
 It also provides guidelines about glossary entry layout and content.
@@ -30,7 +30,8 @@ The first paragraph of any glossary page is a simple and short description of th
 Preferably, this should be no more than two sentences.
 Make sure anyone reading the description can immediately understand the defined term.
 
-> **Note:** Please don't copy-and-paste from other definitions or content on the internet.
+> [!NOTE]
+> Please don't copy-and-paste from other definitions or content on the internet.
 > (And especially not Wikipedia, since its range of license versions is smaller and incompatible with MDN.) Your glossary entry should be original content.
 
 #### Writing a good glossary entry

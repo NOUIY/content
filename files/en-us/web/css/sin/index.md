@@ -26,7 +26,7 @@ width: calc(100px * sin(pi / 2));
 width: calc(100px * sin(e / 4));
 ```
 
-### Parameter
+### Parameters
 
 The `sin(angle)` function accepts only one value as its parameter.
 
@@ -40,7 +40,7 @@ The sine of an `angle` will always return a number between `−1` and `1`.
 - If `angle` is `infinity`, `-infinity`, or `NaN`, the result is `NaN`.
 - If `angle` is `0⁻`, the result is `0⁻`.
 
-### Formal syntax
+## Formal syntax
 
 {{CSSSyntax}}
 

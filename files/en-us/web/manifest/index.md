@@ -1,11 +1,12 @@
 ---
 title: Web app manifests
+short-title: Manifest
 slug: Web/Manifest
 page-type: landing-page
 browser-compat: html.manifest
 ---
 
-{{QuickLinksWithSubpages("/en-US/docs/Web/Manifest")}}
+{{QuickLinksWithSubpages("/en-US/docs/Web/Manifest/Reference")}}
 
 A **web application manifest**, defined in the [Web Application Manifest](https://w3c.github.io/manifest/) specification, is a {{Glossary("JSON")}} text file that provides information about a web application.
 
@@ -19,56 +20,33 @@ This section lists the members that may appear in the manifest.
 
 All members are optional in the specification, but some applications require some members to be present. For example, [PWAs must provide certain manifest members](/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable#required_manifest_members).
 
-{{ListSubpages("/en-US/docs/Web/Manifest")}}
+{{ListSubpages("/en-US/docs/Web/Manifest/Reference")}}
+
+> [!NOTE]
+> The `dir`, `lang`, and `iarc_rating_id` members are not implemented.
 
 ## Example manifest
 
 ```json
 {
-  "name": "HackerWeb",
-  "short_name": "HackerWeb",
-  "start_url": ".",
-  "display": "standalone",
-  "background_color": "#fff",
-  "description": "A readable Hacker News app.",
+  "short_name": "MDN",
+  "name": "MDN Web Docs",
   "icons": [
     {
-      "src": "images/touch/homescreen48.png",
-      "sizes": "48x48",
-      "type": "image/png"
-    },
-    {
-      "src": "images/touch/homescreen72.png",
-      "sizes": "72x72",
-      "type": "image/png"
-    },
-    {
-      "src": "images/touch/homescreen96.png",
-      "sizes": "96x96",
-      "type": "image/png"
-    },
-    {
-      "src": "images/touch/homescreen144.png",
-      "sizes": "144x144",
-      "type": "image/png"
-    },
-    {
-      "src": "images/touch/homescreen168.png",
-      "sizes": "168x168",
-      "type": "image/png"
-    },
-    {
-      "src": "images/touch/homescreen192.png",
+      "src": "/favicon-192x192.png",
       "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "related_applications": [
-    {
-      "platform": "play",
-      "url": "https://play.google.com/store/apps/details?id=cheeaun.hackerweb"
-    }
-  ]
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
 }
 ```
 
@@ -92,9 +70,9 @@ If the manifest requires credentials to fetch, the [`crossorigin`](/en-US/docs/W
 
 In some browsers and operating systems, a splash screen is displayed when an installed PWA is launched. This splash screen is automatically generated and its appearance is defined by members in the web app manifest, specifically:
 
-- [`name`](/en-US/docs/Web/Manifest/name)
-- [`background_color`](/en-US/docs/Web/Manifest/background_color)
-- [`icons`](/en-US/docs/Web/Manifest/icons)
+- [`name`](/en-US/docs/Web/Manifest/Reference/name)
+- [`background_color`](/en-US/docs/Web/Manifest/Reference/background_color)
+- [`icons`](/en-US/docs/Web/Manifest/Reference/icons)
 
 ## Browser compatibility
 

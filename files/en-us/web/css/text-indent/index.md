@@ -7,7 +7,7 @@ browser-compat: css.properties.text-indent
 
 {{CSSRef}}
 
-The **`text-indent`** CSS property sets the length of empty space (indentation) that is put before lines of text in a block.
+The **`text-indent`** [CSS](/en-US/docs/Web/CSS) property sets the length of empty space (indentation) that is put before lines of text in a block.
 
 {{EmbedInteractiveExample("pages/css/text-indent.html")}}
 
@@ -58,7 +58,7 @@ text-indent: unset;
 
 ## Examples
 
-### Simple indent
+### Basic indent
 
 #### HTML
 
@@ -84,7 +84,7 @@ p {
 
 #### Result
 
-{{ EmbedLiveSample('Simple_indent','100%','100%') }}
+{{ EmbedLiveSample('Basic_indent','100%','100%') }}
 
 ### Skipping indentation on the first paragraph
 
@@ -191,7 +191,7 @@ p {
 
 ## See also
 
-- [Learn to style HTML using CSS](/en-US/docs/Learn/CSS)
+- [Learn to style HTML using CSS](/en-US/docs/Learn_web_development/Core/Styling_basics)
 - Related CSS properties:
 
   - [`text-justify`](/en-US/docs/Web/CSS/text-justify)
